@@ -3,16 +3,20 @@
     padding: 0;
 }
 
-
 button {
-    margin: 1rem;
-
-    padding: 0.5rem 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
     outline: none;
     border: 0;
     cursor: pointer;
     font-weight: bold;
     border-radius: 0.3rem;
+    transition: 200ms ease-in-out;
+}
+
+.fullWidth {
+    width: 100%;
 }
 
 .type-contained {
@@ -20,13 +24,37 @@ button {
     color: #fff;
 }
 
+.type-contained:hover {
+    background-color: #1782bf;
+}
+
 .type-outlined {
     background-color: #fff;
     color: #309CD9;
     border: 2px solid #309CD9;
 }
-
-.type-none {
-
+.type-outlined:hover {
+    color: #fff;
+    background: #309CD9;
 }
 
+.type-none {
+    background-color: transparent;
+    color: #309CD9;
+}
+
+.type-none:hover {
+    text-decoration: underline;
+}
+
+.size-small {
+    font: 0.5rem;
+}
+
+.size-normal {
+    font-size: 1rem;
+}
+
+.size-big {
+    font-size: 1.5rem;
+}
