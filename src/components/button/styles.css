@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+button {
+    margin: 1rem;
+
+    padding: 0.5rem 0.75rem;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0.3rem;
+}
+
+.type-contained {
+    background: #309CD9;
+    color: #fff;
+}
+
+.type-outlined {
+    background-color: #fff;
+    color: #309CD9;
+    border: 2px solid #309CD9;
+}
+
+.type-none {
+
+}
+
