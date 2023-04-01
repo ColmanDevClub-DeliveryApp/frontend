@@ -1,6 +1,6 @@
 import './App.css';
 import './components/button/index'
-import ResturauntInformation from './components/resturauntInformation/index';
+
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <ResturauntInformation address="האשל 12 ראשון לציון" phone="054-123-1231" openingTimes={openingTimes}/>
+
     </div>
   );
 }
