@@ -1,5 +1,6 @@
 *{
     font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 .RestaurantInfo{
@@ -10,7 +11,7 @@
     left: 20px;
     top: 20px;
     border-radius: 1.5rem;
-    box-shadow: 0px 0px 5px  #309cd9;
+    box-shadow: 0px 0px 5px 4px #309cd9;
     line-height: 1.5rem;
 }
 
