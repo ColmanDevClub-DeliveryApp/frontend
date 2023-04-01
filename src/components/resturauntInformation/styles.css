@@ -4,14 +4,11 @@
 }
 
 .RestaurantInfo{
-    width: 250px;
-    height: 150px;
-    padding: 30px;
-    position: fixed;
-    left: 20px;
-    top: 20px;
+    width: 15.625rem;
+    height: 9.375rem;
+    padding: 1.875rem;
     border-radius: 1.5rem;
-    box-shadow: 0px 0px 5px 4px #309cd9;
+    box-shadow: 0px 0px 0.3125rem 0.25rem #309cd9;
     line-height: 1.5rem;
 }
 
