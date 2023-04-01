@@ -1,13 +1,11 @@
 import './App.css';
 import './components/button/index'
-import Button from './components/button/index';
+import PaymentInfo from './components/payment/index'
 
 function App() {
   return (
     <div className="App">
-        <Button text={"contained"} type={"contained"} size={"normal"}/>
-        <Button text={"outlined"} type={"outlined"} size={"big"}/>
-        <Button text={"none"} type={"none"} size={"small"}/>
+      <PaymentInfo orderPrice='342' deliveryPrice='12' totalPrice='354'/>
     </div>
   );
 }
