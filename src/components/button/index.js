@@ -6,7 +6,8 @@ import "./styles.css"
  * @param {*} text this is the text
  * @param {*} type options: contained / outlined / none
  * @param {*} size options: small / normal / big
- * @returns 
+ * @param {*} onclick function
+ * @param {*} fullWidth add this to the props to make the button 100% width
  */
 
 const Button = ({text, type, size, onclick, fullWidth=false}) => {
