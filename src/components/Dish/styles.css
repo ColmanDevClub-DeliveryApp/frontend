@@ -1,0 +1,43 @@
+.dish {
+    width: 65rem;
+    margin: auto;
+    border:  1px solid #ccc;
+    overflow: hidden;
+}
+
+.image {
+    float: right;
+    margin-left: 3rem;
+}
+
+.title{
+    float: right;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.discription{
+    text-align: end;
+    font-size: 1rem;
+    padding-top: 5rem;
+}
+
+.price{
+    color: #309CD9;
+    float: right;
+    font-size: 1rem;
+    margin-top: 4rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 3.5rem;
+    padding-left: 2rem;
+}
+
+.numberClass{
+    font-weight: bold;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
