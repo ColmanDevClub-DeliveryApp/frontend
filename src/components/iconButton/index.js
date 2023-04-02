@@ -8,7 +8,7 @@ import "./styles.css"
  * @param {*} size options: small / normal / big
  */
 
-const IconButton = ({icon, type, size, onclick}) => {
+const IconButton = ({icon, type="contained", size="normal", onclick}) => {
     return (
         <div>
             <button className={`type-${type} size-${size}`} onClick={onclick} >{icon}</button>

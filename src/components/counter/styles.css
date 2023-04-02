@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+}
+
+span{
+    padding: 0 .5rem;
+    font-weight: 600;
+}
