@@ -5,10 +5,11 @@ import IconButton from "../iconButton";
 
 /**
  * @param {*} type options: contained / outlined / none
+ * @param {*} size options: small / normal / big
  * 
  */
 
-const Counter = ({type}) => {
+const Counter = ({type="contained", size="normal"}) => {
     const [count, setCount] = useState(0);
 
     const addOne = ()=> {
@@ -20,12 +21,11 @@ const Counter = ({type}) => {
         }
     }
     
-
     return (
         <div className="counter-container">
-            <IconButton icon={"+"} onclick={addOne} type={type}/>
-            <span>{count}</span>
-            <IconButton icon={"-"} onclick={decreaseByOne} type={type}/>
+            <IconButton icon={"+"} onclick={addOne} type={type} size={size}/>
+            <span className={`size-${size}`}>{count}</span>
+            <IconButton icon={"-"} onclick={decreaseByOne} type={type} size={size}/>
         </div>
     )
 }
