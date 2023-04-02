@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+}
+
+span{
+    
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span.size-small {
+    font-size: 0.5rem;
+    padding: 0 .1rem;
+}
+span.size-normal {
+    font-size: 1rem;
+    padding: 0 .25rem;
+}
+span.size-big {
+    font-size: 1.5rem;
+    padding: 0 .5rem;
+}

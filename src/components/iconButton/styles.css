@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 100%;
+    transition: 200ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.type-contained {
+    background: #309CD9;
+    color: #fff;
+}
+
+.type-contained:hover {
+    background-color: #1782bf;
+}
+
+.type-outlined {
+    background-color: #fff;
+    color: #309CD9;
+    border: 2px solid #309CD9;
+}
+.type-outlined:hover {
+    color: #fff;
+    background: #309CD9;
+}
+
+.type-none {
+    background-color: transparent;
+    color: #309CD9;
+}
+
+.type-none:hover {
+    text-decoration: underline;
+}
+
+.size-small {
+    font: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.size-normal {
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.size-big {
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
