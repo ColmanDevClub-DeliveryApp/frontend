@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap%27');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+.text{
+    text-align: end;
+}
+
+.dish {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 60.375rem;
+}
+
+.image {
+    margin-left: 3rem;
+    width: 21.25rem
+}
+
+.title{
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 1rem; 
+}
+
+.PriceAndButton{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.discription{
+    font-size: 1rem;
+    color: #676767;
+}
+
+.price{
+    color: #309CD9;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.numberClass{
+    font-weight: bold;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}

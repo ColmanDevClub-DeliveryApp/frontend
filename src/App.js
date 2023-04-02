@@ -1,7 +1,6 @@
 import './App.css';
 import PlayGround from './PlayGround';
 
-
 function App() {
 
   return (
