@@ -4,17 +4,15 @@
 }
 
 button {
-    padding: 0.5rem 1rem;
     outline: none;
     border: 0;
     cursor: pointer;
     font-weight: bold;
-    border-radius: 0.3rem;
+    border-radius: 100%;
     transition: 200ms ease-in-out;
-}
-
-.fullWidth {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .type-contained {
@@ -47,12 +45,18 @@ button {
 
 .size-small {
     font: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .size-normal {
     font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .size-big {
     font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
