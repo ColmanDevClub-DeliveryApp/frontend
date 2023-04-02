@@ -1,12 +1,13 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import "./styles.css"
 import Button from '../button'
 
 /**
- * 
+ *
  * parameters: picture, title, discription, price
  */
-const Dish = ({picture, title, discription, price}) => {
+const Dish = ({picture="picture", title="restaurant Title", discription="restaurant discription", price="price"}) => {
+
     return (
         <div className="dish">
             <div className="image">

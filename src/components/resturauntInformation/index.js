@@ -7,6 +7,7 @@ import './styles.css';
  * 
  */
 const RestaurantInfo = ({address, phone, openingTimes }) => {
+
   return (
     <div className='RestaurantInfo'>
         <p>{phone}</p>
