@@ -10,6 +10,9 @@ button {
     font-weight: bold;
     border-radius: 100%;
     transition: 200ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .type-contained {
