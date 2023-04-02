@@ -1,11 +1,11 @@
 import './App.css';
 import './components/button/index'
-import PaymentInfo from './components/payment/index'
+import PlayGround from './PlayGround';
 
 function App() {
   return (
     <div className="App">
-      <PaymentInfo orderPrice='342' deliveryPrice='12' totalPrice='354'/>
+      <PlayGround />
     </div>
   );
 }
