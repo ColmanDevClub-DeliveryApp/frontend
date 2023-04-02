@@ -6,6 +6,7 @@ import "./styles.css"
  * @param {*} icon 
  * @param {*} type options: contained / outlined / none
  * @param {*} size options: small / normal / big
+ * @param {*} onclick function
  */
 
 const IconButton = ({icon, type="contained", size="normal", onclick}) => {
