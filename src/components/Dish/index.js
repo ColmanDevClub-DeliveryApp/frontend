@@ -6,7 +6,7 @@ import Counter from '../counter'
  *
  * parameters: picture, title, discription, price
  */
-const Dish = ({picture="", title="restaurant Title", discription="restaurant discription", price="price"}) => {
+const Dish = ({picture="", title="כותרת מסעדה", discription="תיאור מסעדה", price="0.00", priceSymbol="₪"}) => {
 
     return (
         <div className="dish">
@@ -15,20 +15,18 @@ const Dish = ({picture="", title="restaurant Title", discription="restaurant dis
             </div>
 
             <div className="body">
-                <div className="title">
-                    <h3>{title}</h3>
-                </div>
-
-                <div className="discription">
-                    <p>{discription}</p>
+                <div className="text">
+                    <h3 className='title'>{title}</h3>
+                    <p className='discription'>{discription}</p>
                 </div>
             
-                <div className="price">
-                    <p>{price}₪</p>
-                </div>
-
-                <div className="buttons">
-                    <Counter />
+                <div className="PriceAndButton">
+                    <div className="price">
+                        <p>{price}{priceSymbol}</p>
+                    </div>
+                    <div className="buttons">
+                        <Counter />
+                    </div>
                 </div>
             </div>
         </div>
