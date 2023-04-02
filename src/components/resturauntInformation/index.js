@@ -3,23 +3,21 @@ import './styles.css';
 
 /**
  * 
- * parameters: address, phone, openingTimes - array of objects with day and hours) 
+ * parameters: address, phone, openingTimes - array of objects with day and hours expamle - [{day: "'א'-ה",hours:"08:00-23:00"},{day: "'ש", hours: "סגור"}]) 
  * 
  */
-const RestaurantInfo = ({address, phone, openingTimes }) => {
+const RestaurantInfo = ({address="ראשון לציון", phone="123-456-7890", openingTimes=[{day: "'א'-ה",hours:"08:00-23:00"},{day: "'ש", hours: "סגור"}] }) => {
   return (
     <div className='RestaurantInfo'>
-        <p>{phone}</p>
-        <p> כתובת: {address}</p>
-        <p className='openingTimes'>:שעות פתיחה</p>
-        <table>
+        <p className='phone'>{phone}</p>
+        <p className='address'> <span className="address-title">כתובת:</span> {address}</p>
+        <p className='openingTimes-Title'>:שעות פתיחה</p>
         {openingTimes.map(({ day, hours }) => (
-            <tr key={day}>
-              <td>{hours}</td>
-              <td>{day}</td>
-            </tr>
+          <div className='openingTimes'>
+              <p className='hours'>{hours}</p>
+              <p className='day'>:{day}</p>
+          </div>
           ))}
-        </table>
     </div>
   );
 };
