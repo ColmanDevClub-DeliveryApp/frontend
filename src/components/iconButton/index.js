@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.css"
 
 /**
- * 
  * @param {*} icon 
  * @param {*} type options: contained / outlined / none
  * @param {*} size options: small / normal / big
