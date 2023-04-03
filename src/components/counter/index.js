@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import "./styles.css"
+import Style from "./styles.module.css"
 import IconButton from "../iconButton";
 
 /**
  * @param {*} type options: contained / outlined / none
- * @param {*} size options: small / normal / big
+ * @param {*} size options: small / normal / large
  * 
  */
 
@@ -22,9 +22,9 @@ const Counter = ({type="contained", size="normal"}) => {
     }
     
     return (
-        <div className="counter-container">
+        <div className={Style.counter_container}>
             <IconButton icon={"+"} onclick={addOne} type={type} size={size}/>
-            <span className={`size-${size}`}>{count}</span>
+            <span className={`${Style[size]} ${Style.span}`}>{count}</span>
             <IconButton icon={"-"} onclick={decreaseByOne} type={type} size={size}/>
         </div>
     )

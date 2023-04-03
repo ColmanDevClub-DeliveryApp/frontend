@@ -14,7 +14,7 @@
     font-size: 1rem;
 }
 
-.openingTimes-Title{
+.openingTimes_Title{
     text-decoration: underline;
     margin-bottom: 0.5rem;
     font-weight: bold;
@@ -36,6 +36,6 @@ p{
     margin-bottom: 0.3125rem;
 }
 
-.address-title{
+.address_title{
     font-weight: bold;
 }
