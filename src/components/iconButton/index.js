@@ -1,17 +1,18 @@
 import React from "react";
-import "./styles.css"
+import Style from "./styles.module.css"
 
 /**
  * @param {*} icon 
  * @param {*} type options: contained / outlined / none
- * @param {*} size options: small / normal / big
+ * @param {*} size options: small / normal / large
  * @param {*} onclick function
  */
 
-const IconButton = ({icon, type="contained", size="normal", onclick}) => {
+const IconButton = ({icon="+", type="contained", size="normal", onclick}) => {
+
     return (
-        <div>
-            <button className={`type-${type} size-${size}`} onClick={onclick} >{icon}</button>
+        <div className={Style.iconButton}>
+            <button className={`${Style[type]} ${Style[size]}`} onClick={onclick} >{icon}</button>
         </div>
     )
 }

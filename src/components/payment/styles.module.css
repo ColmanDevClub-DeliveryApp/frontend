@@ -17,22 +17,22 @@
     line-height: 1.7rem;
 }
 
-p{
+.p{
     display: flex;
     justify-content: space-between;
     direction: rtl;
     width: 15.875rem;
 }
 
-p:not(:last-child){
+.p:not(:last-child){
     margin-bottom: 0.5rem;
 }
 
-p:last-child{
+.p:last-child{
     margin-bottom: 1rem;
 }
 
-.text-container{
+.textContainer{
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }

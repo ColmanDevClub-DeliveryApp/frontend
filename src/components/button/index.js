@@ -1,19 +1,19 @@
 import React from "react";
-import "./styles.css"
+import Style from "./styles.module.css"
 
 /**
  * 
  * @param {*} text this is the text
  * @param {*} type options: contained / outlined / none
- * @param {*} size options: small / normal / big
+ * @param {*} size options: small / normal / large
  * @param {*} onclick function
  * @param {*} fullWidth add this to the props to make the button 100% width
  */
 
-const Button = ({text, type, size, onclick, fullWidth=false}) => {
+const Button = ({text="", type="contained", size="normal", onclick, fullWidth=false}) => {
     return (
         <div>
-            <button className={`type-${type} size-${size} ${fullWidth ? "fullWidth":""}`} onClick={onclick}>{text}</button>
+            <button className={`${Style[type]} ${Style[size]} ${fullWidth ? Style.fullWidth : ""}`} onClick={onclick}>{text}</button>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import Style from './styles.module.css';
 import Button from '../button/index';
 
 /**
@@ -9,13 +9,13 @@ import Button from '../button/index';
  */
 const PaymentInfo = ({orderPrice="0.00", deliveryPrice="0.00", totalPrice="0.00", priceSymbol="₪"}) => {
   return (
-    <div className='PaymentInfo'>
-        <div className="text-container">
-            <p><span>מחיר הזמנה:</span> <span>{orderPrice}{priceSymbol}</span></p>
-            <p><span>מחיר משלוח:</span> <span>{deliveryPrice}{priceSymbol}</span></p>
-            <p className='bold'><span>מחיר כולל:</span> <span>{totalPrice}{priceSymbol}</span></p>
+    <div className={Style.PaymentInfo}>
+        <div className={Style.textContainer}>
+            <p className={Style.p}><span>מחיר הזמנה:</span> <span>{orderPrice}{priceSymbol}</span></p>
+            <p className={Style.p}><span>מחיר משלוח:</span> <span>{deliveryPrice}{priceSymbol}</span></p>
+            <p className={`${Style.p} ${Style.bold}`}><span>מחיר כולל:</span> <span>{totalPrice}{priceSymbol}</span></p>
         </div>
-        <Button text="לביצוע הזמנה" type="contained" size="big" fullWidth/>
+        <Button text="לביצוע הזמנה" type="contained" size="large" fullWidth={true}/>
     </div>
   );
 };
