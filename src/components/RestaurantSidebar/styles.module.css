@@ -1,0 +1,22 @@
+.sidebar{
+    width: fit-content;
+}
+
+.li{
+    font-weight: bold;
+    list-style: none;
+    padding-bottom: 0.2rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.a{
+    text-decoration: none;
+    color: #676767;
+    border-bottom: 0.2rem solid transparent;
+}
+
+.a:hover{
+    color: black;
+    border-bottom: 0.2rem solid black;
+}
