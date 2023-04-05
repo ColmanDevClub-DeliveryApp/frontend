@@ -8,15 +8,28 @@
     padding-bottom: 0.2rem;
     cursor: pointer;
     width: fit-content;
+    position: relative;
 }
 
+.li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.15rem;
+    background-color: #000;
+    transition: width 0.3s ease-in-out;
+}
+  
+.li:hover::before {
+    width: 100%;
+}
 .a{
     text-decoration: none;
     color: #676767;
-    border-bottom: 0.2rem solid transparent;
 }
 
 .a:hover{
     color: black;
-    border-bottom: 0.2rem solid black;
 }
