@@ -6,7 +6,7 @@ import Style from "./styles.module.css"
  * @param {String} restTitle the name of the restaurant
  * @param {String} restTitleColor the color of the restaurant's name (light / dark)
  */
-const RestaurantBanner = ({img="https://picsum.photos/1400", restTitle="Restaurant Name", subTitle, restTitleColor="dark"}) => {
+const RestaurantBanner = ({img="https://picsum.photos/1400", restTitle="Restaurant Name", subTitle="subtitle", restTitleColor="dark"}) => {
 
     return (
         <div className={Style.restaurant_banner} style={{"background": `url(${img}) no-repeat`, "backgroundSize": "100% 100%"}}>
