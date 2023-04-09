@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Button from "../button";
 import Styles from './styles.module.css'
+import {FaGoogle} from 'react-icons/fa'
 
 const signInForm = () =>{
 
@@ -16,6 +17,9 @@ const signInForm = () =>{
             </div>
             <Button text="התחבר" fullWidth/>
         </form>
+        <Button text="Continue with Google" fullWidth type="outlined">
+        <FaGoogle className={Styles.google_icon}/>
+        </Button>
 
         
 

@@ -2,6 +2,9 @@
     width: fit-content;
 }
 
+.form{
+    margin-bottom: 1rem;
+}
 .input {
     padding: 0.5rem;
     outline: 0;
@@ -28,4 +31,6 @@
     padding: 0;
     align-self: flex-end;
 }
+
+  
 
