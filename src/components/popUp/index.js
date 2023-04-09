@@ -2,6 +2,8 @@ import React, {useState, useEffect } from 'react';
 import Styles from './styles.module.css';
 import IconButton from '../iconButton';
 import Button from '../button'
+import SignIn from '../signInForm'
+import SignUp from '../SignUp'
 
 const Popup = ({ isOpen, onClose, isNewUser, setNewUser}) => {
 
@@ -20,12 +22,11 @@ const Popup = ({ isOpen, onClose, isNewUser, setNewUser}) => {
             <div className={Styles.modalContent}>
                 <IconButton icon='x' onclick={onClose}/>
                 <div className={Styles.title}>
-                <Button text="הרשמה" type={`${isNewUser?"contained": "none"}`} onclick={changeToSignUp}/>
-                <Button text="התחברות" type={`${isNewUser?"none": "contained"}`} onclick={changeToSignIn}/>
+                    <Button text="הרשמה" type={`${isNewUser?"contained": "none"}`} onclick={changeToSignUp}/>
+                    <Button text="התחברות" type={`${isNewUser?"none": "contained"}`} onclick={changeToSignIn}/>
                 </div>
                 <div>
-                    
-
+                  {isNewUser? <SignUp/>: <SignIn/> }  
                 </div>
             </div>
         </div>

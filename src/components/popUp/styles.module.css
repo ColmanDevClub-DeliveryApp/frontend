@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    position: fixed;
+    position: fixed;;
 }
 .overLay{
     background: rgba(49,49,49,0.8);
@@ -18,16 +18,19 @@
     transform: translate(-50%, -50%);
     background: #fff;
     line-height: 1.4;
-    padding: 2rem;
+    padding: 3rem;
     border-radius: 0.5rem;
 }
 
 .title{
-    width: 15rem;
+    width: 50%;
     justify-content: space-between;
     display: flex;
+    margin: auto;
     margin-top: 2rem;
     font-weight: 400;
+    margin-bottom: 2rem;
+
 }
 
 .bold{
