@@ -21,3 +21,15 @@
     padding: 2rem;
     border-radius: 0.5rem;
 }
+
+.title{
+    width: 15rem;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 2rem;
+    font-weight: 400;
+}
+
+.bold{
+    font-weight: 700;
+}
