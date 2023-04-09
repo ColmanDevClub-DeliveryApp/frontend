@@ -1,0 +1,31 @@
+.signIn{
+    width: fit-content;
+}
+
+.input {
+    padding: 0.5rem;
+    outline: 0;
+    direction: rtl;
+    border: 0;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 0.2rem black;
+    width: 35rem;
+    margin-bottom: 1rem;
+}
+.lastInput{
+    margin-bottom: 0;
+}
+
+.inputsContainer, .form{
+    display: flex;
+    flex-direction: column;
+}
+.inputsContainer{
+    margin-bottom: 1rem;
+}
+
+.forgotPassword{
+    padding: 0;
+    align-self: flex-end;
+}
+
