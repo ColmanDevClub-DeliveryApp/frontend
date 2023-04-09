@@ -27,7 +27,7 @@
 .outlined {
     background-color: #fff;
     color: #309CD9;
-    border: 2px solid #309CD9;
+    border: 2px solid #309CD9 !important;
 }
 .outlined:hover {
     color: #fff;
