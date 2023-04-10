@@ -16,8 +16,6 @@ const SignUp = () => {
             <Button text="הרשמה" fullWidth/>
         </form>
     </div>
-
-    
   );
 };
 
