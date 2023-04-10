@@ -1,0 +1,23 @@
+.SignUp {
+    width: fit-content;
+}
+
+.form, .input_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_container {
+    margin-bottom: 1.5rem;
+}
+
+.input {
+    padding: 0.5rem;
+    outline: 0;
+    direction: rtl;
+    border: 0;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 0.2rem black;
+    width: 35rem;
+    margin-bottom: 1rem;
+}
