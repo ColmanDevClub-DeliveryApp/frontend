@@ -20,7 +20,7 @@ const Popup = ({ isOpen, onClose, isNewUser, setNewUser}) => {
         <div className={Styles.modal}>
             <div className={Styles.overLay} onClick={onClose}></div>
             <div className={Styles.modalContent}>
-            <div className={Styles.xButton}><IconButton icon='x' onclick={onClose}/></div>
+            <IconButton icon='x' onclick={onClose}/>
                 
                 <div className={Styles.title}>
                     <Button text="הרשמה" type={`${isNewUser?"contained": "none"}`} onclick={changeToSignUp}/>

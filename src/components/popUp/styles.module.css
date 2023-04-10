@@ -36,7 +36,3 @@
 .bold{
     font-weight: 700;
 }
-.xButton{
-    display: flex;
-    justify-content: end;
-}
