@@ -10,10 +10,10 @@ import Style from "./styles.module.css"
  * @param {*} fullWidth add this to the props to make the button 100% width
  */
 
-const Button = ({text="", type="contained", size="normal", onclick, fullWidth=false}) => {
+const Button = ({text="", type="contained", size="normal", onclick, fullWidth=false, overrides={}, children}) => {
     return (
         <div>
-            <button className={`${Style[type]} ${Style[size]} ${fullWidth ? Style.fullWidth : ""}`} onClick={onclick}>{text}</button>
+            <button style={overrides} className={`${Style[type]} ${Style[size]} ${fullWidth ? Style.fullWidth : ""}`} onClick={onclick}>{children} {text}</button>
         </div>
     )
 }
