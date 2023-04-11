@@ -1,6 +1,7 @@
 import React from "react";
 import Style from "./styles.module.css";
-import {RiMotorbikeFill} from 'react-icons/ri'
+import { FiPackage } from "react-icons/fi";
+import { FaMotorcycle } from "react-icons/fa";
 
 const RestaurantCard = ({
   restaurantItem = {
@@ -28,10 +29,15 @@ const RestaurantCard = ({
       <hr />
       <div className={Style.deliveryDetails}>
         <p className={Style.deliveryDetails__left}>
-            <RiMotorbikeFill/>
-          <span className={Style.price}>{restaurantItem.deliveryPrice.toFixed(2)}₪</span>
+          <FiPackage />
+          <span className={Style.price}>
+            {restaurantItem.deliveryPrice.toFixed(2)}₪
+          </span>
         </p>
-        <p className={Style.deliveryDetails__right}>{restaurantItem.deliveryTime}min</p>
+        <p className={Style.deliveryDetails__right}>
+          <FaMotorcycle />
+          <span className={Style.time}>{restaurantItem.deliveryTime}min</span>
+        </p>
       </div>
     </div>
   );
