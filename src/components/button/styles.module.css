@@ -11,6 +11,9 @@ button {
     font-weight: bold;
     border-radius: 0.3rem;
     transition: 200ms ease-in-out;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
 }
 
 .fullWidth {
