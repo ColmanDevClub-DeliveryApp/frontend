@@ -6,7 +6,7 @@ import Counter from '../counter'
  *
  * parameters: picture, title, discription, price
  */
-const Dish = ({picture="https://picsum.photos/200", title="כותרת מסעדה", discription="תיאור מסעדה", price="0.00", priceSymbol="₪"}) => {
+const Dish = ({picture="https://picsum.photos/200", title="כותרת מסעדה", discription="תיאור מסעדה", price=0, priceSymbol="₪"}) => {
 
     return (
         <div className={Style.dish}>
@@ -22,7 +22,7 @@ const Dish = ({picture="https://picsum.photos/200", title="כותרת מסעדה
             
                 <div className={Style.PriceAndButton}>
                     <div className={Style.price}>
-                        <p>{price}{priceSymbol}</p>
+                        <p>{price.toFixed(2)}{priceSymbol}</p>
                     </div>
                     <div className={Style.buttons}>
                         <Counter />
