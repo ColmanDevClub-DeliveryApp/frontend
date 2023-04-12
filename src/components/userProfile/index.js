@@ -37,14 +37,12 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
 
-const UserProfile = () => {
-    const [name, setName] = useState('John Doe');
-    const [email, setEmail] = useState('johndoe@example.com');
-    const [phoneNumber, setPhoneNumber] = useState('555-1234');
-    const [profilePicture, setProfilePicture] = useState("");
-    const [specialCoins, setSpecialCoins] = useState(0);
+const UserProfile = ({fullName="Yuval", emailAddress="dasf", phoneNumber="0546657709", profilePicture="https://media.licdn.com/dms/image/D4D35AQGlc6xAvtYKLA/profile-framedphoto-shrink_200_200/0/1656023012859?e=1681938000&v=beta&t=PqA1e1IwvqbSceslciDvC6P_ct9gFFwCmwZ_dIKxr1U", coins=0}) => {
+    const [email, setEmail] = useState(emailAddress);
+    const [phoneNum, setPhoneNum] = useState(phoneNumber);
+    const [profilePic, setProfilePic] = useState(profilePicture);
+    const [specialCoins, setSpecialCoins] = useState(coins);
 
-  const [originalName, setOriginalName] = useState('');
   const [originalEmail, setOriginalEmail] = useState('');
   const [originalPhoneNumber, setOriginalPhoneNumber] = useState('');
   const [originalProfilePicture, setOriginalProfilePicture] = useState('');
@@ -52,95 +50,94 @@ const UserProfile = () => {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
-    setOriginalName(name);
     setOriginalEmail(email);
-    setOriginalPhoneNumber(phoneNumber);
+    setOriginalProfilePicture(profilePic);
+    setOriginalPhoneNumber(phoneNum);
   }, []);
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
   const handlePhoneNumberChange = (event) => {
-    setPhoneNumber(event.target.value);
+    setPhoneNum(event.target.value);
   };
 
   const handleProfilePictureChange = (event) =>{
-    setProfilePicture(event.target.value)
+    setProfilePic(event.target.value)
   }
 
   const handleEditClick = () => {
-    setOriginalName(name);
     setOriginalEmail(email);
-    setOriginalPhoneNumber(phoneNumber);
-    setOriginalProfilePicture(profilePicture);
+    setOriginalPhoneNumber(phoneNum);
+    setOriginalProfilePicture(profilePic);
     setEditing(true);
   };
 
   const handleCancelClick = () => {
-    setName(originalName);
     setEmail(originalEmail);
-    setPhoneNumber(originalPhoneNumber);
-    setProfilePicture(originalProfilePicture);
+    setPhoneNum(originalPhoneNumber);
+    setProfilePic(originalProfilePicture);
     setEditing(false);
   };
 
   const handleSaveClick = () => {
-    setOriginalName(name);
     setOriginalEmail(email);
-    setOriginalPhoneNumber(phoneNumber);
-    setOriginalProfilePicture(profilePicture);
+    setOriginalPhoneNumber(phoneNum);
+    setOriginalProfilePicture(profilePic);
     setEditing(false);
   };
 
   return (
     <div className={Styles.user_profile}>
       <h1>פרופיל</h1>
-      <div className={Styles.profile_info_container}>
+
         <div className={Styles.profile_info_item}>
-          <div className={Styles.profile_info_label}>שם</div>
-          {editing ? (
-            <input
-              className={Styles.edit_profile_input}
-              type="text"
-              value={name}
-              onChange={handleNameChange}
-            />
-          ) : (
-            <div>{name}</div>
-          )}
+            <div className={Styles.name}><h2>{fullName}</h2></div>
         </div>
-        <div className={Styles.profile_info_item}>
-          <div className={Styles.profile_info_label}>אימייל</div>
-          {editing ? (
-            <input
-              className={Styles.edit_profile_input}
-              type="text"
-              value={email}
-              onChange={handleEmailChange}
-            />
-          ) : (
-            <div>{email}</div>
-          )}
+
+        <div className={Styles.profile_info_container}>
+            <div className={Styles.profile_info_item}>
+                <div className={Styles.profile_info_label}>אימייל</div>
+            {editing ? (
+                <input
+                    className={Styles.edit_profile_input}
+                    type="text"
+                    value={email}
+                    onChange={handleEmailChange}
+                />
+            ) : (
+                <div>{email}</div>
+                )}
+            </div>
+            <div className={Styles.profile_info_item}>
+                <div className={Styles.profile_info_label}>מספר טלפון</div>
+                {editing ? (
+                    <input
+                        className={Styles.edit_profile_input}
+                        type="text"
+                        value={phoneNum}
+                        onChange={handlePhoneNumberChange}
+                    />
+                ) : (
+                <div>{phoneNum}</div>
+                )}
+            </div>
+            <div className={Styles.profile_info_item}>
+                <div className={`${Styles.profile_info_label} ${Styles.profileDiv}`}><img className={Styles.profilePic} src={profilePic} alt='profilePic'/></div>
+                {editing ? (
+                    <input
+                        className={`${Styles.edit_profile_input} ${Styles.profilePicInput}`}
+                        type="text"
+                        value={profilePic}
+                        onChange={handleProfilePictureChange}
+                    />
+                ) : (
+                <div></div>
+                )}
+            </div>
         </div>
-        <div className={Styles.profile_info_item}>
-          <div className={Styles.profile_info_label}>מספר טלפון</div>
-          {editing ? (
-            <input
-              className={Styles.edit_profile_input}
-              type="text"
-              value={phoneNumber}
-              onChange={handlePhoneNumberChange}
-            />
-          ) : (
-            <div>{phoneNumber}</div>
-          )}
-        </div>
-      </div>
       {editing ? (
         <div className={Styles.saveCancelButtons}>
           <Button text="שמירה" onclick={handleSaveClick}/>

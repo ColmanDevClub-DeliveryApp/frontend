@@ -1,6 +1,3 @@
-
-
-
 .user_profile {
     max-width: 600px;
     margin: 20px auto;
@@ -11,7 +8,7 @@
   
 .user_profile h1 {
     text-align: right;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
   
 .profile_info_container {
@@ -42,8 +39,6 @@
     width: 100%;
 }
 
-
-
 .saveCancelButtons{
     display: flex;
     flex-direction: row;
@@ -66,4 +61,18 @@
   .coins{
     margin-left: 0.5rem;
   }
+
+  .name{
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
   
+  .profilePic{
+    border-radius: 100%;
+    width: 75px;
+    height: 75px;
+  }
+
+ .profilePicInput{
+    margin-bottom: 60px;
+ }
