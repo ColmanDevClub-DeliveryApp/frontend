@@ -9,6 +9,7 @@
 .user_profile h1 {
     text-align: right;
     margin-bottom: 1rem;
+    font-size: 3rem;
 }
   
 .profile_info_container {
@@ -56,9 +57,10 @@
     font-size: 20px;
     font-weight: bold;
     margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   
-  .coins{
+  .coinsIcon{
     margin-left: 0.5rem;
   }
 
@@ -75,4 +77,10 @@
 
  .profilePicInput{
     margin-bottom: 60px;
+ }
+
+ .restaurants{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
  }

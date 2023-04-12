@@ -36,8 +36,9 @@ import Button from '../button'
 import '@fortawesome/fontawesome-free/css/all.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
+import RestaurantCard from '../RestaurantCard';
 
-const UserProfile = ({fullName="Yuval", emailAddress="dasf", phoneNumber="0546657709", profilePicture="https://media.licdn.com/dms/image/D4D35AQGlc6xAvtYKLA/profile-framedphoto-shrink_200_200/0/1656023012859?e=1681938000&v=beta&t=PqA1e1IwvqbSceslciDvC6P_ct9gFFwCmwZ_dIKxr1U", coins=0}) => {
+const UserProfile = ({fullName="Yuval", emailAddress="dasf", phoneNumber="0546657709", profilePicture="", coins=0}) => {
     const [email, setEmail] = useState(emailAddress);
     const [phoneNum, setPhoneNum] = useState(phoneNumber);
     const [profilePic, setProfilePic] = useState(profilePicture);
@@ -149,8 +150,16 @@ const UserProfile = ({fullName="Yuval", emailAddress="dasf", phoneNumber="054665
 
         <div className={Styles.specialCoins}>
             <FontAwesomeIcon icon={faCoins} />
-            <span className={Styles.coins}>Special Coins: {specialCoins}</span>
+            <span className={Styles.coinsIcon}>Special Coins: {specialCoins}</span>
         </div>
+
+        <h1>מקומות שאהבת</h1>
+        <div className={Styles.restaurants}>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+        </div>
+        
 
     </div>
   );
