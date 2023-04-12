@@ -1,0 +1,69 @@
+
+
+
+.user_profile {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+.user_profile h1 {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+  
+.profile_info_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.profile_info_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile_info_label {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.edit_profile_input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+
+
+.saveCancelButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    margin-left: 9rem;
+}
+
+.specialCoins {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+  
+  .coins{
+    margin-left: 0.5rem;
+  }
+  
