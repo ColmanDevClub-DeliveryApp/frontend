@@ -1,8 +1,8 @@
 import React from "react";
 import Style from "./styles.module.css";
 import RestaurantCard from "../RestaurantCard";
-import IconButton from "../iconButton"
-import {BsArrowRightShort, BsArrowLeftShort} from "react-icons/bs"
+import IconButton from "../iconButton";
+import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
 
 const RestaurantsCarousel = ({
   restaurants = [
@@ -28,21 +28,50 @@ const RestaurantsCarousel = ({
       deliveryTime: 0,
     },
   ],
+  title = "קרוסלה - כותרת",
+  subtitle= "קרוסלה - תת כותרת",
+  showBtns=true
 }) => {
   return (
-    <div className={Style.carouselContainer}>
+    <div className={Style.carouselComponent}>
+        {(title || subtitle) && <div className={Style.titles}>
+            {title && <h1 className={Style.title}>{title}</h1>}
+            {subtitle && <h3 className={Style.subtitle}>{subtitle}</h3>}
+        </div>}
+      <div className={Style.carouselContainer}>
+        {showBtns && <IconButton
+          icon=""
+          size="large"
+          overrides={{
+            border: "0.2rem solid black",
+            background: "white",
+            color: "black",
+          }}
+        >
+          <BsArrowLeftShort />
+        </IconButton>}
         
-        <IconButton icon="" size="large" overrides={{"border": "0.2rem solid black", "background": "white", "color": "black"}}>
-            <BsArrowLeftShort/>
-        </IconButton>
-        <div className={Style.restWrapper}>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
+        <div className={Style.carouselView}>
+            <div className={Style.cardsContainer}>
+                <div className={Style.card}><RestaurantCard /></div>
+                <div className={Style.card}><RestaurantCard /></div>
+                <div className={Style.card}><RestaurantCard /></div>
+                <div className={Style.card}><RestaurantCard /></div>
+            </div>
         </div>
-        <IconButton icon="" size="large" overrides={{"border": "0.2rem solid black", "background": "white", "color": "black"}}>
-            <BsArrowRightShort/>
-        </IconButton>
+
+        {showBtns && <IconButton
+          icon=""
+          size="large"
+          overrides={{
+            border: "0.2rem solid black",
+            background: "white",
+            color: "black",
+          }}
+        >
+          <BsArrowRightShort />
+        </IconButton>}
+      </div>
     </div>
   );
 };
