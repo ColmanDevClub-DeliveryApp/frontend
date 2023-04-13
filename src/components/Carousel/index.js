@@ -30,8 +30,8 @@ const RestaurantsCarousel = ({
       deliveryTime: 0,
     },
   ],
-  title = "קרוסלה - כותרת",
-  subtitle = "קרוסלה - תת כותרת",
+  title,
+  subtitle,
   autoPlay = false,
   interval = 3000,
 }) => {
