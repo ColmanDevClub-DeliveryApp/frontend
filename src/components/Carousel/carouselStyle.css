@@ -3,3 +3,30 @@
 .alice-carousel__wrapper {
     padding: 1rem;
 }
+
+.alice-carousel__prev-btn-wrapper, .alice-carousel__next-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0.2rem solid black;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: white;
+}
+
+.alice-carousel__prev-btn-wrapper:hover ::after, .alice-carousel__next-btn-wrapper:hover {
+    color: black;
+}
+
+.alice-carousel__prev-btn-wrapper {
+    left: 0.5rem;
+}
+
+.alice-carousel__next-btn-wrapper {
+    right: 0.5rem;
+}

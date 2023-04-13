@@ -2,8 +2,7 @@ import React from "react";
 import Style from "./styles.module.css";
 import "./carouselStyle.css";
 import RestaurantCard from "../RestaurantCard";
-import IconButton from "../iconButton";
-import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
+import { ImArrowRight2, ImArrowLeft2 } from "react-icons/im";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -71,10 +70,12 @@ const RestaurantsCarousel = ({
         infinite
         autoPlay={autoPlay}
         autoPlayInterval={interval}
-        keyboardNavigation
+        // keyboardNavigation
         disableDotsControls
         autoHeight={false}
-        disableButtonsControls
+        // disableButtonsControls
+        renderNextButton={()=> {return <div className="alice-carousel__next-btn-wrapper"><ImArrowRight2/></div>}}
+        renderPrevButton={()=> {return <div className="alice-carousel__prev-btn-wrapper"><ImArrowLeft2/></div>}}
       />
     </div>
   );
