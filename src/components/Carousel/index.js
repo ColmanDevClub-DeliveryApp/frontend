@@ -1,8 +1,11 @@
 import React from "react";
 import Style from "./styles.module.css";
+import "./carouselStyle.css";
 import RestaurantCard from "../RestaurantCard";
 import IconButton from "../iconButton";
 import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 const RestaurantsCarousel = ({
   restaurants = [
@@ -29,49 +32,50 @@ const RestaurantsCarousel = ({
     },
   ],
   title = "קרוסלה - כותרת",
-  subtitle= "קרוסלה - תת כותרת",
-  showBtns=true
+  subtitle = "קרוסלה - תת כותרת",
+  autoPlay = false,
+  interval = 3000,
 }) => {
+  const handleDragStart = (e) => e.preventDefault();
+  const items = [];
+
+  restaurants.forEach((item) => {
+    items.push(
+      <div className={Style.card} onDragStart={handleDragStart}>
+        <RestaurantCard restaurantItem={item} />
+      </div>
+    );
+  });
+
   return (
     <div className={Style.carouselComponent}>
-        {(title || subtitle) && <div className={Style.titles}>
-            {title && <h1 className={Style.title}>{title}</h1>}
-            {subtitle && <h3 className={Style.subtitle}>{subtitle}</h3>}
-        </div>}
-      <div className={Style.carouselContainer}>
-        {showBtns && <IconButton
-          icon=""
-          size="large"
-          overrides={{
-            border: "0.2rem solid black",
-            background: "white",
-            color: "black",
-          }}
-        >
-          <BsArrowLeftShort />
-        </IconButton>}
-        
-        <div className={Style.carouselView}>
-            <div className={Style.cardsContainer}>
-                <div className={Style.card}><RestaurantCard /></div>
-                <div className={Style.card}><RestaurantCard /></div>
-                <div className={Style.card}><RestaurantCard /></div>
-                <div className={Style.card}><RestaurantCard /></div>
-            </div>
+      {(title || subtitle) && (
+        <div className={Style.titles}>
+          {title && <h1 className={Style.title}>{title}</h1>}
+          {subtitle && <h3 className={Style.subtitle}>{subtitle}</h3>}
         </div>
+      )}
 
-        {showBtns && <IconButton
-          icon=""
-          size="large"
-          overrides={{
-            border: "0.2rem solid black",
-            background: "white",
-            color: "black",
-          }}
-        >
-          <BsArrowRightShort />
-        </IconButton>}
-      </div>
+      <AliceCarousel
+        mouseTracking
+        items={items}
+        responsive={{
+          0: {
+            items: 1,
+          },
+          1024: {
+            items: 3,
+            itemsFit: "contain",
+          },
+        }}
+        infinite
+        autoPlay={autoPlay}
+        autoPlayInterval={interval}
+        keyboardNavigation
+        disableDotsControls
+        autoHeight={false}
+        disableButtonsControls
+      />
     </div>
   );
 };
