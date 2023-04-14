@@ -38,7 +38,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
 import RestaurantCard from '../RestaurantCard';
 
-const UserProfile = ({fullName="Yuval", emailAddress="dasf", phoneNumber="0546657709", profilePicture="", coins=0}) => {
+const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePicture="", coins=0}) => {
     const [email, setEmail] = useState(emailAddress);
     const [phoneNum, setPhoneNum] = useState(phoneNumber);
     const [profilePic, setProfilePic] = useState(profilePicture);
@@ -54,7 +54,7 @@ const UserProfile = ({fullName="Yuval", emailAddress="dasf", phoneNumber="054665
     setOriginalEmail(email);
     setOriginalProfilePicture(profilePic);
     setOriginalPhoneNumber(phoneNum);
-  }, []);
+  }, [coins]);
 
 
   const handleEmailChange = (event) => {
@@ -153,14 +153,13 @@ const UserProfile = ({fullName="Yuval", emailAddress="dasf", phoneNumber="054665
             <span className={Styles.coinsIcon}>Special Coins: {specialCoins}</span>
         </div>
 
-        <h1>מקומות שאהבת</h1>
+        <h1>הזמנות אחרונות</h1>
         <div className={Styles.restaurants}>
             <RestaurantCard/>
             <RestaurantCard/>
             <RestaurantCard/>
         </div>
         
-
     </div>
   );
 };
