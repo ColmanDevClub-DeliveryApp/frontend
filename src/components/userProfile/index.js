@@ -140,7 +140,7 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
           <Button text="ביטול" onclick ={handleCancelClick}/>
         </div>
       ) : (
-        <Button text="עריכה" onclick={handleEditClick}/>
+        <Button text="עריכה" onclick={handleEditClick} fullWidth/>
       )}
 
         <div className={Styles.specialCoins}>
