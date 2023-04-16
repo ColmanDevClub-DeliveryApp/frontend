@@ -6,12 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
 import RestaurantCard from '../RestaurantCard';
 
-const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePicture="", coins=0, cardNumber="1234"}) => {
+const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePicture="", coins=0, cardNumber="1234-1234-1234-1234"}) => {
     const [email, setEmail] = useState(emailAddress);
     const [phoneNum, setPhoneNum] = useState(phoneNumber);
     const [profilePic, setProfilePic] = useState(profilePicture);
     const [specialCoins, setSpecialCoins] = useState(coins);
-    const [paymentDetails, setPaymentDetails] = useState("1234-5678-9012-3456")
+    const [paymentDetails, setPaymentDetails] = useState(cardNumber)
 
   const [originalEmail, setOriginalEmail] = useState('');
   const [originalPhoneNumber, setOriginalPhoneNumber] = useState('');
@@ -24,7 +24,8 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
     setOriginalEmail(email);
     setOriginalProfilePicture(profilePic);
     setOriginalPhoneNumber(phoneNum);
-    setOriginalPaymentDetails(paymentDetails)
+    setOriginalPaymentDetails(paymentDetails);
+    setEditing(false);
   }, []);
 
 
@@ -71,7 +72,7 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
   return (
     <div className={Styles.user_profile}>
       <div className={Styles.topBar}>
-        <Button text="מחיקת משתמש" overrides={{"background-color":"red"}} size="small"/>
+        <Button text="מחיקת משתמש" overrides={{"background-color":"red"}} size="small" />
         <h1>פרופיל</h1>
       </div>
 
