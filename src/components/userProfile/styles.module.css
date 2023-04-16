@@ -1,9 +1,9 @@
 .user_profile {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    max-width: 37.5rem;
+    margin: 1.25rem auto;
+    padding: 1.25rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.625rem;
   }
   
 .user_profile h1 {
@@ -18,8 +18,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 25px;
-    margin-bottom: 20px;
+    gap: 1.5625rem;
+    margin-bottom: 1.25rem;
 }
 
 .profile_info_item {
@@ -29,14 +29,14 @@
 }
 
 .profile_info_label {
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
     font-weight: 700;
 }
 
 .edit_profile_input {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid #ccc;
     width: 100%;
 }
 
@@ -53,8 +53,8 @@
     align-items: center;
     justify-content: center;
     background-color: #f2f2f2;
-    height: 50px;
-    font-size: 20px;
+    height: 3.125rem;
+    font-size: 1.25rem;
     font-weight: bold;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -71,16 +71,25 @@
   
   .profilePic{
     border-radius: 100%;
-    width: 75px;
-    height: 75px;
+    width: 4.6875rem;
+    height: 4.6875rem;
   }
 
  .profilePicInput{
-    margin-bottom: 60px;
+    margin-bottom: 3.75rem;
  }
 
  .restaurants{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1.25rem;
+
  }
+.topBar{
+  display: flex;
+  flex-direction: row;
+  gap:1.25rem;
+  justify-content: space-between;
+  align-content: center;
+}
+ 

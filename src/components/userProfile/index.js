@@ -1,35 +1,3 @@
-// import React from 'react';
-// import Styles from './styles.module.css'
-
-// const UserProfile = ({fullName="", numOfCoins=0, phoneNumber="", email="", profilePic=""}) =>{
-//     return(
-//         <div>
-//             <h1 className={Styles.h1}>פרופיל</h1>
-//             <div className={Styles.details}>
-                
-//                     <h3 className={Styles.h3}>{fullName}</h3>
-//                 <div className={Styles.detailsContainer}>
-//                     <div className={Styles.mail}>
-//                         <span className={`${Styles.bold} ${Styles.title}`}>אימייל</span>
-//                         <span className={Styles.content}>{email}</span>
-//                     </div>
-//                     <div className={Styles.phone}>
-//                         <span className={`${Styles.bold} ${Styles.title}`}>מספר טלפון</span>
-//                         <span className={Styles.content}>{phoneNumber}</span>
-//                     </div>
-//                 </div>
-//             </div>
-            
-
-//         </div>
-//     );
-// };
-
-// export default UserProfile;
-
-
-///WORKS!!
-
 import React, { useState, useEffect } from 'react';
 import Styles from './styles.module.css';
 import Button from '../button'
@@ -38,15 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
 import RestaurantCard from '../RestaurantCard';
 
-const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePicture="", coins=0}) => {
+const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePicture="", coins=0, cardNumber="1234"}) => {
     const [email, setEmail] = useState(emailAddress);
     const [phoneNum, setPhoneNum] = useState(phoneNumber);
     const [profilePic, setProfilePic] = useState(profilePicture);
     const [specialCoins, setSpecialCoins] = useState(coins);
+    const [paymentDetails, setPaymentDetails] = useState("1234-5678-9012-3456")
 
   const [originalEmail, setOriginalEmail] = useState('');
   const [originalPhoneNumber, setOriginalPhoneNumber] = useState('');
   const [originalProfilePicture, setOriginalProfilePicture] = useState('');
+  const [originalPaymentDetails, setOriginalPaymentDetails] = useState('');
 
   const [editing, setEditing] = useState(false);
 
@@ -54,7 +24,8 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
     setOriginalEmail(email);
     setOriginalProfilePicture(profilePic);
     setOriginalPhoneNumber(phoneNum);
-  }, [coins]);
+    setOriginalPaymentDetails(paymentDetails)
+  }, []);
 
 
   const handleEmailChange = (event) => {
@@ -69,10 +40,15 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
     setProfilePic(event.target.value)
   }
 
+  const handlePaymentDetailsChange = (event) =>{
+    setPaymentDetails(event.target.value)
+  }
+
   const handleEditClick = () => {
     setOriginalEmail(email);
     setOriginalPhoneNumber(phoneNum);
     setOriginalProfilePicture(profilePic);
+    setOriginalPaymentDetails(paymentDetails);
     setEditing(true);
   };
 
@@ -80,6 +56,7 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
     setEmail(originalEmail);
     setPhoneNum(originalPhoneNumber);
     setProfilePic(originalProfilePicture);
+    setPaymentDetails(originalPaymentDetails);
     setEditing(false);
   };
 
@@ -87,18 +64,35 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
     setOriginalEmail(email);
     setOriginalPhoneNumber(phoneNum);
     setOriginalProfilePicture(profilePic);
+    setOriginalPaymentDetails(paymentDetails);
     setEditing(false);
   };
 
   return (
     <div className={Styles.user_profile}>
-      <h1>פרופיל</h1>
+      <div className={Styles.topBar}>
+        <Button text="מחיקת משתמש" overrides={{"background-color":"red"}} size="small"/>
+        <h1>פרופיל</h1>
+      </div>
 
         <div className={Styles.profile_info_item}>
             <div className={Styles.name}><h2>{fullName}</h2></div>
         </div>
 
         <div className={Styles.profile_info_container}>
+        <div className={Styles.profile_info_item}>
+                <div className={Styles.profile_info_label}>פרטי אשראי</div>
+                {editing ? (
+                    <input
+                        className={Styles.edit_profile_input}
+                        type="text"
+                        value={paymentDetails}
+                        onChange={handlePaymentDetailsChange}
+                    />
+                ) : (
+                <div>{paymentDetails}</div>
+                )}
+            </div>
             <div className={Styles.profile_info_item}>
                 <div className={Styles.profile_info_label}>אימייל</div>
             {editing ? (
@@ -163,6 +157,5 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
     </div>
   );
 };
-
 export default UserProfile;
 
