@@ -1,7 +1,6 @@
 import React from "react";
 import Style from "./styles.module.css";
 import { MdLocationOn } from "react-icons/md";
-import Input from "../Input/index.js"
 import Button from "../button";
 
 const Navbar = ({user}) => {
