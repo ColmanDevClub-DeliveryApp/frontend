@@ -2,6 +2,8 @@
     width: 100%;
     height: 60vh;
     position: relative;
+    background-position: center !important;
+    background-size: cover !important;
 }
 
 .titles_container {
@@ -10,10 +12,13 @@
     right: 4.25rem;
     letter-spacing: 0.1rem;
     text-align: end;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 5rem;
+    padding: 0.25rem 3rem;
 }
 
 .rest_title {
-    font-size: 4rem;
+    font-size: 4rem;   
 }
 
 .sub_title {

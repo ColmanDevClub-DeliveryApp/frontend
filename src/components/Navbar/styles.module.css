@@ -1,0 +1,90 @@
+.navbar_container {
+    background-color: #fff;
+    box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+    padding: 1rem 2rem;
+}
+.logo_wrapper {
+    height: 3rem;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.logo_wrapper * {
+    height: 100%;
+    width: 100%;
+}
+.navbar_ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    flex-direction: row-reverse;
+    gap: 2rem;
+}
+
+.li_logo {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.location {
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.location_icon *{
+    font-size: 1rem;
+}
+
+.location p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: center;
+    color: var(--primary-color);
+}
+.location p span:first-child{
+    font-size: 0.9em;
+}
+
+.li {
+    font-size: 1.2rem;
+    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.li a {
+    text-decoration: none;
+    color: rgb(101, 101, 101);
+    transition: 200ms ease-in-out;
+    border-bottom: 0.15rem solid transparent;
+}
+
+.li:hover a {
+    color: black;
+    border-color: #000;
+}
+
+.li_input {
+    flex: 0.7;
+}
+.navbar_input {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.li_btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    margin: 0 !important;
+    gap: 1rem;
+}
