@@ -53,7 +53,7 @@ function RestaurantPage() {
         <div className={Style.hero}>
           <input className={Style.search} placeholder='חפש בתפריט'/>
           <div className={Style.info_wrapper}>
-            <RestaurantInfo />
+            <RestaurantInfo openingTimes={restaurant.openingHours} address={`${restaurant.address.street}, ${restaurant.address.city}`} phone={`0${restaurant.phone}`}/>
           </div>
           <div className={Style.menu_container}>
             <div className={Style.menu_wrapper}>

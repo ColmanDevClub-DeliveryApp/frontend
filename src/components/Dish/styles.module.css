@@ -17,6 +17,11 @@
     width: 100%;
 }
 
+.discription {
+    direction: rtl;
+    text-align: right;
+}
+
 .image {
     /* margin-left: 3rem; */
     width: 21.25rem
@@ -32,7 +37,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    padding: 2rem 1rem; 
+    padding: 2rem 1rem;
 }
 
 .PriceAndButton{
