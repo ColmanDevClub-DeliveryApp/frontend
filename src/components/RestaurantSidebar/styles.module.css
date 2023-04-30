@@ -2,6 +2,12 @@
     width: fit-content;
 }
 
+.ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .li{
     font-weight: bold;
     list-style: none;
@@ -28,6 +34,7 @@
 .a{
     text-decoration: none;
     color: #676767;
+    text-align: right;
 }
 
 .a:hover{
