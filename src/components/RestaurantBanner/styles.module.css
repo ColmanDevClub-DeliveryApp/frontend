@@ -12,13 +12,13 @@
     right: 4.25rem;
     letter-spacing: 0.1rem;
     text-align: end;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 5rem;
+    padding: 0.25rem 3rem;
 }
 
 .rest_title {
-    font-size: 4rem;
-    background-color: rgba(255, 255, 255, 0.75);
-    padding: 0.25rem 2rem;
-    border-radius: 5rem;
+    font-size: 4rem;   
 }
 
 .sub_title {
