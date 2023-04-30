@@ -1,0 +1,35 @@
+.search {
+    width: 30vw;
+    text-align: center;
+}
+
+.hero {
+    padding: 2rem 5rem;
+}
+
+.info_wrapper {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.menu_container {
+    position: relative;
+    display: flex;
+}
+
+.menu_wrapper {
+    flex: 0.8;
+}
+
+.list_wrapper:not(:first-child) {
+    margin-top: 4rem;
+}
+
+.rest_nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex: 0.2;
+    display: flex;
+    justify-content: end;
+}
