@@ -6,24 +6,16 @@ import SignIn from '../signInForm'
 import SignUp from '../SignUp'
 
 const Popup = ({ isOpen, onClose, isNewUser, setNewUser}) => {
-
-    const changeToSignIn = ()=>{
-        if(isNewUser)
-            setNewUser(false);
-    }
-    const changeToSignUp = ()=>{
-        if(!isNewUser)
-            setNewUser(true);
-    }
     return(
         isOpen&&
         <div className={Styles.modal}>
             <div className={Styles.overLay} onClick={onClose}></div>
             <div className={Styles.modalContent}>
-                <IconButton icon='x' onclick={onClose}/>
+            <IconButton icon='x' onclick={onClose}/>
+                
                 <div className={Styles.title}>
-                    <Button text="הרשמה" type={`${isNewUser?"contained": "none"}`} onclick={changeToSignUp}/>
-                    <Button text="התחברות" type={`${isNewUser?"none": "contained"}`} onclick={changeToSignIn}/>
+                    <Button text="הרשמה" type={`${isNewUser?"contained": "none"}`} onclick={()=> setNewUser(true)}/>
+                    <Button text="התחברות" type={`${isNewUser?"none": "contained"}`} onclick={()=> setNewUser(false)}/>
                 </div>
                 <div>
                   {isNewUser? <SignUp/>: <SignIn/> }  
@@ -31,11 +23,7 @@ const Popup = ({ isOpen, onClose, isNewUser, setNewUser}) => {
             </div>
         </div>
 
-
-
     )
   
-
 }
-
 export default Popup
