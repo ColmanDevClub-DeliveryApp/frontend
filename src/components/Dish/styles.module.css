@@ -15,6 +15,7 @@
     flex-direction: row-reverse;
     max-width: 60.375rem;
     width: 100%;
+    cursor: pointer;
 }
 
 .discription {
@@ -23,8 +24,19 @@
 }
 
 .image {
-    /* margin-left: 3rem; */
-    width: 21.25rem
+    width: 21.25rem;
+    height: 12.5rem;    
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    transition: 300ms ease-in-out;
+}
+
+.dish:hover .image img {
+    transform: scale(1.2);
 }
 
 .title{
