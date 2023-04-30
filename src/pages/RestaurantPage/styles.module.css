@@ -33,3 +33,11 @@
     display: flex;
     justify-content: end;
 }
+
+.end_btn {
+    position: fixed;
+    width: fit-content;
+    right: 2rem;
+    bottom: 2rem;
+    cursor: pointer;
+}
