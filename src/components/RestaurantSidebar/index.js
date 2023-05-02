@@ -4,7 +4,7 @@ import Style from './styles.module.css'
 const RestaurantSidebar = ({items}) => {
   return (
     <div className={Style.sidebar}>
-      <ul>
+      <ul className={Style.ul}>
         {items.map((item, index) => {
             return (
                 <li className={Style.li} key={index}>

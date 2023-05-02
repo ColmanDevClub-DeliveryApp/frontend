@@ -8,7 +8,6 @@
 # testing
 /coverage
 PlayGround.js
-DB/
 
 # production
 /build

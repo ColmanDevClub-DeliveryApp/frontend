@@ -3,7 +3,7 @@
     flex-direction: column;
     border-radius: 0.5rem;
     width: 100%;
-    max-width: 22.8125rem;
+    width: 22.8125rem;
     overflow: hidden;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -13,10 +13,18 @@
 .RestaurantCard:hover .restImg {
     transform: scale(1.1);
 }
+.RestaurantCard:hover .imgContainer {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
 
 .imgContainer {
     height: 10rem;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
+    transition: 400ms ease;
 }
 
 .restImg {
