@@ -19,7 +19,7 @@ const List = ({items, listTitle, subTitle}) => {
                 {items.map((item, index) =>{
                     return (
                     <>
-                        <li className={Style.list_item} key={index}><Dish title={item.title} discription={item.discription} picture={item.picture} price={item.price}/></li>
+                        <li className={Style.list_item} key={index}><Dish title={item.name} discription={item.description} picture={item.image} price={item.price}/></li>
                     </>
                     )
                 })}

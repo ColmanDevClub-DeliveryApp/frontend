@@ -2,13 +2,13 @@ import React, {useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import Style from './styles.module.css'
 import RestaurantBanner from "../../components/RestaurantBanner"
-// import axios from 'axios'
+import axios from 'axios'
 import { useState } from 'react';
 import testRest from "../../DB/restaurantDB"
-import RestaurantInfo from "../../components/resturauntInformation"
+import RestaurantInfo from "../../components/RestaurantInfo"
 import List from "../../components/List"
 import RestaurantSidebar from "../../components/RestaurantSidebar"
-import Button from '../../components/button';
+import Button from '../../components/Button';
 
 
 function RestaurantPage() {
@@ -19,21 +19,22 @@ function RestaurantPage() {
     const [catalogTitles, setCatalogTitles] = useState([])
     const [cart, setCart] = useState([])
 
-    // useEffect(() => {
-    //   axios.get(`http://localhost:8080/restaurants/${restaurant_name.toLowerCase()}`).then((res)=> {
-    //     console.log(res.data);
-    //     setRestaurant(res.data)
-    //   }).catch(e=> {
-    //     console.log(`ERROR: ${e}`);
-    //   })
+    useEffect(() => {
+      axios.get(`http://localhost:8080/restaurants/${restaurant_name.toLowerCase()}`).then((res)=> {
+        console.log(res.data.restaurant);
+        setRestaurant(res.data.restaurant)
+        setPageLoaded(true)  
+      }).catch(e=> {
+        console.log(`ERROR: ${e}`);
+      })
     
-    // }, [restaurant_name])
+    }, [restaurant_name])
     
-    useEffect (()=> {
-      setRestaurant(testRest)
-      setPageLoaded(true)  
+    // useEffect (()=> {
+    //   setRestaurant(testRest)
+    //   setPageLoaded(true)  
 
-    }, [])
+    // }, [])
 
     useEffect (()=> {
       if (pageLoaded)
@@ -42,7 +43,7 @@ function RestaurantPage() {
 
     const saveCatalogTitles = ()=> {
       const catTitles =[]
-        restaurant.catalog.map((element, index)=> {
+        restaurant.category.map((element, index)=> {
           const x = {"url": `/restaurants/${restaurant_name}#catalog-${index}`, 'title': element.title}
           catTitles.push(x)
         })
@@ -67,7 +68,7 @@ function RestaurantPage() {
           </div>
           <div className={Style.menu_container}>
             <div className={Style.menu_wrapper}>
-                {restaurant.catalog.map((catalogItem, index) => {
+                {restaurant.category.map((catalogItem, index) => {
                     return (<div key={index} className={Style.list_wrapper} id={`catalog-${index}`}>
                     <List items={catalogItem.dishes} listTitle={catalogItem.title} subTitle={catalogItem.subtitle}/>
                     </div>)

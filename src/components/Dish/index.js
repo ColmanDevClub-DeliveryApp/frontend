@@ -6,7 +6,7 @@ import Counter from '../Counter'
  *
  * parameters: picture, title, discription, price
  */
-const Dish = ({picture="https://picsum.photos/200", title="כותרת מסעדה", discription="תיאור מסעדה", price=0, priceSymbol="₪"}) => {
+const Dish = ({picture, title="כותרת מסעדה", discription="תיאור מסעדה", price=0, priceSymbol="₪"}) => {
 
     return (
         <div className={Style.dish}>
