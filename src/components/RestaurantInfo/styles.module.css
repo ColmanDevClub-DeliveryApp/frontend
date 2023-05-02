@@ -30,6 +30,7 @@
 
 .openingTimes .day{
     font-weight: bold;
+    direction: rtl;
 }
 
 p{
