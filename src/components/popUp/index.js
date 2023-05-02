@@ -1,9 +1,9 @@
 import React, {useState, useEffect } from 'react';
 import Styles from './styles.module.css';
-import IconButton from '../iconButton';
-import Button from '../button'
-import SignIn from '../signInForm'
-import SignUp from '../SignUp'
+import IconButton from '../IconButton';
+import Button from '../Button'
+import SignIn from '../SignInForm'
+import SignUp from '../SignUpForm'
 
 const Popup = ({ isOpen, onClose, isNewUser, setNewUser}) => {
     return(

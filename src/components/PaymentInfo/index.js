@@ -1,6 +1,6 @@
 import React from 'react';
 import Style from './styles.module.css';
-import Button from '../button/index';
+import Button from '../Button/index';
 
 /**
  * 
