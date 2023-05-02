@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Style from "./styles.module.css"
-import IconButton from "../iconButton";
+import IconButton from "../IconButton";
 
 /**
  * @param {*} type options: contained / outlined / none

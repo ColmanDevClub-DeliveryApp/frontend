@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import Button from "../button";
+import Button from "../Button";
 import Styles from './styles.module.css'
 import {FaGoogle} from 'react-icons/fa'
 
-const signInForm = () =>{
+const SignInForm = () =>{
 
     return(
         <div className={Styles.signIn}>
@@ -27,4 +27,4 @@ const signInForm = () =>{
     );
 }
 
-export default signInForm;
+export default SignInForm;

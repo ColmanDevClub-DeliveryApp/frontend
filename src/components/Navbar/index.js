@@ -1,7 +1,7 @@
 import React from "react";
 import Style from "./styles.module.css";
 import { MdLocationOn } from "react-icons/md";
-import Button from "../button";
+import Button from "../Button";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ user }) => {

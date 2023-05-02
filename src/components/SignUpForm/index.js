@@ -1,9 +1,9 @@
 import React from 'react';
 import Style from './styles.module.css';
-import Button from "../button";
+import Button from "../Button";
 
 
-const SignUp = () => {
+const SignUpForm = () => {
   return (
     <div className={Style.SignUp}>
         <form className={Style.form}>
@@ -19,4 +19,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpForm;
