@@ -1,0 +1,7 @@
+.container{
+    padding: 2rem 0;
+}
+
+.container:not(:first-child){
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
