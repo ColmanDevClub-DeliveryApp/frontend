@@ -29,12 +29,6 @@ function RestaurantPage() {
       })
     
     }, [restaurant_name])
-    
-    // useEffect (()=> {
-    //   setRestaurant(testRest)
-    //   setPageLoaded(true)  
-
-    // }, [])
 
     useEffect (()=> {
       if (pageLoaded)
