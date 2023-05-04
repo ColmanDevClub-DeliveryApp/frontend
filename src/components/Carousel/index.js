@@ -7,29 +7,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 const RestaurantsCarousel = ({
-  restaurants = [
-    {
-      image: "https://picsum.photos/200",
-      name: "restaurant 1",
-      description: "restaurant description",
-      deliveryPrice: 0,
-      deliveryTime: 0,
-    },
-    {
-      image: "https://picsum.photos/200",
-      name: "restaurant 2",
-      description: "restaurant description",
-      deliveryPrice: 0,
-      deliveryTime: 0,
-    },
-    {
-      image: "https://picsum.photos/200",
-      name: "restaurant 3",
-      description: "restaurant description",
-      deliveryPrice: 0,
-      deliveryTime: 0,
-    },
-  ],
+  restaurants = [],
   title,
   subtitle,
   autoPlay = false,
@@ -70,10 +48,8 @@ const RestaurantsCarousel = ({
         infinite
         autoPlay={autoPlay}
         autoPlayInterval={interval}
-        // keyboardNavigation
         disableDotsControls
         autoHeight={false}
-        // disableButtonsControls
         renderNextButton={()=> {return <div className="alice-carousel__next-btn-wrapper"><ImArrowRight2/></div>}}
         renderPrevButton={()=> {return <div className="alice-carousel__prev-btn-wrapper"><ImArrowLeft2/></div>}}
       />
