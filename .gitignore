@@ -8,7 +8,11 @@
 # testing
 /coverage
 PlayGround.js
+<<<<<<< HEAD
 DB
+=======
+DB/
+>>>>>>> ba3443b8eeb2b4e0bd05be3acb95dcf0c5c32f65
 
 # production
 /build

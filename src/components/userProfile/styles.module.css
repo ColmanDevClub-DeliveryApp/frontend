@@ -1,0 +1,94 @@
+.user_profile {
+    max-width: 50rem;
+    margin: 1.25rem auto;
+    padding: 1.25rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.625rem;
+  }
+  
+.user_profile h1 {
+    text-align: right;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+  
+.profile_info_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5625rem;
+    margin-bottom: 1.25rem;
+}
+
+.profile_info_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile_info_label {
+    margin-bottom: 0.3125rem;
+    font-weight: 700;
+}
+
+.edit_profile_input {
+    padding: 0.3125rem;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid #ccc;
+    width: 100%;
+}
+
+.saveCancelButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7rem;
+}
+
+.specialCoins {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    height: 3.125rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .coinsIcon{
+    margin-left: 0.5rem;
+  }
+
+  .name{
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .profilePic{
+    border-radius: 100%;
+    width: 4.6875rem;
+    height: 4.6875rem;
+  }
+
+ .profilePicInput{
+    margin-bottom: 3.75rem;
+ }
+
+ .restaurants{
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+
+ }
+.topBar{
+  display: flex;
+  flex-direction: row;
+  gap:1.25rem;
+  justify-content: space-between;
+  align-content: center;
+}
+ 

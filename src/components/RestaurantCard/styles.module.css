@@ -1,0 +1,64 @@
+.RestaurantCard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    width: 100%;
+    width: 22.8125rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    background-color: white;
+}
+
+.RestaurantCard:hover .restImg {
+    transform: scale(1.1);
+}
+.RestaurantCard:hover .imgContainer {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.imgContainer {
+    height: 10rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5);
+    transition: 400ms ease;
+}
+
+.restImg {
+    width: 100%;
+    height: 100%;
+    transition: 400ms ease-in-out;
+}
+
+.text {
+    text-align: start;
+    padding: 1rem;
+}
+
+.restName {
+    margin-bottom: 0.2rem;
+}
+
+.restDesc {
+    color: rgb(101, 101, 101);
+}
+
+.deliveryDetails { 
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(101, 101, 101);
+}
+
+.deliveryDetails__left, .deliveryDetails__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price, .time {
+    margin-left: 0.5rem;
+}
