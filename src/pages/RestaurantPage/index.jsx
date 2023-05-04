@@ -11,8 +11,8 @@ import RestaurantSidebar from "../../components/RestaurantSidebar"
 import Button from '../../components/button';
 
 
-function RestaurantPage() {
 
+function RestaurantPage() {
     const {restaurant_name} = useParams();
     const [restaurant, setRestaurant] = useState({})
     const [pageLoaded, setPageLoaded] = useState(false)
@@ -32,7 +32,6 @@ function RestaurantPage() {
     useEffect (()=> {
       setRestaurant(testRest)
       setPageLoaded(true)  
-
     }, [])
 
     useEffect (()=> {
@@ -48,7 +47,6 @@ function RestaurantPage() {
         })
         setCatalogTitles(catTitles)
     }
-
     const addToCart = ()=> {
       console.log('add to cart');
     }
@@ -67,7 +65,7 @@ function RestaurantPage() {
           </div>
           <div className={Style.menu_container}>
             <div className={Style.menu_wrapper}>
-                {restaurant.catalog.map((catalogItem, index) => {
+                {restaurant.ca
                     return (<div key={index} className={Style.list_wrapper} id={`catalog-${index}`}>
                     <List items={catalogItem.dishes} listTitle={catalogItem.title} subTitle={catalogItem.subtitle}/>
                     </div>)
@@ -81,7 +79,6 @@ function RestaurantPage() {
             <Button text="לסיום הזמנה" size="large"/>
           </div>}
         </div>
-        
     </>
   )
 }
