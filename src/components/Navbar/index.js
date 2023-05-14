@@ -5,9 +5,6 @@ import Button from "../Button";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ user }) => {
-  user = {
-    address: { city: "אימבר 22" },
-  };
 
   return (
     <div className={Style.navbar_container}>

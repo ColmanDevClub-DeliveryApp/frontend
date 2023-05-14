@@ -21,8 +21,8 @@ function RestaurantPage() {
 
     useEffect(() => {
       axios.get(`http://localhost:8080/restaurants/${restaurant_name.toLowerCase()}`).then((res)=> {
-        console.log(res.data.restaurant);
-        setRestaurant(res.data.restaurant)
+        console.log(res.data);
+        setRestaurant(res.data)
         setPageLoaded(true)  
       }).catch(e=> {
         console.log(`ERROR: ${e}`);
