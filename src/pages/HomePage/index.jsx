@@ -1,31 +1,46 @@
-import React, {useState, useEffect} from 'react';
-import Style from './styles.module.css';
-import Carousel from '../../components/Carousel';
-import DB from '../../DB/index.js'
-import Loader from '../../components/Loader';
+import React, { useState, useEffect } from "react";
+import Style from "./styles.module.css";
+import Carousel from "../../components/Carousel";
+import Loader from "../../components/Loader";
+import axios from "axios";
 
 const HomePage = () => {
-    const [categories, setCategories] = useState();
-    const [isLoading, setIsLoading] = useState(true);
+  const [categories, setCategories] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-        setCategories(DB);
-        setIsLoading(false);
-    }, [categories]);
+  const getAllCategories = async () => {
+    const res = await axios.get(`http://localhost:8080/category/`);
+    if (!res) {
+      console.log("ERROR: Could not get all categories");
+      return;
+    }
+    setCategories(res.data);
+    setIsLoading(false);
+    console.log(res.data);
+  };
 
-    return (
-        <>
-            <Loader isLoading={isLoading}>
-            {(!isLoading) && categories.map((category, index) => {
-                return (
-                    <div key={index} className={Style.container}>
-                        <Carousel title={category.title} subtitle={category.subtitle} restaurants={category.restaurants}/>
-                    </div>
-                )
-            })}
-            </Loader>
-        </>
-    )
-}
+  useEffect(() => {
+    getAllCategories();
+  }, []);
+
+  return (
+    <>
+      <Loader isLoading={isLoading}>
+        {categories.length > 0 &&
+          categories.map((category, index) => {
+            return (
+              <div key={index} className={Style.container}>
+                <Carousel
+                  title={category.title}
+                  subtitle={category.subtitle}
+                  restaurants={category.restaurants}
+                />
+              </div>
+            );
+          })}
+      </Loader>
+    </>
+  );
+};
 
 export default HomePage;
