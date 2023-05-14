@@ -63,6 +63,38 @@ const category = [
                 deliveryTime: 30,
             },
         ]
+    },{
+        title: "בשר",
+        subtitle: "מסעדות איטלקיות",
+        restaurants: [
+            {
+                shownName: "איטלקי פלוס",
+                description: "מסעדת סושי",
+                image: "https://picsum.photos/200",
+                deliveryCost: 15,
+                deliveryTime: 30,
+            },
+            {
+                shownName: "1איטלקי פלוס",
+                description: "מסעדת סושי",
+                image: "https://picsum.photos/200",
+                deliveryCost: 15,
+                deliveryTime: 30,
+            },
+            {
+                shownName: "2איטקלי פלוס",
+                description: "מסעדת סושי",
+                image: "https://picsum.photos/200",
+                deliveryCost: 15,
+                deliveryTime: 30,
+            },{
+                shownName: "3אטילקי פלוס",
+                description: "מסעדת סושי",
+                image: "https://picsum.photos/200",
+                deliveryCost: 15,
+                deliveryTime: 30,
+            },
+        ]
     }
 ]
 
