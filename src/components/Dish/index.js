@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Style from "./styles.module.css"
 import Counter from '../Counter'
 import { RestaurantContext } from '../RestaurantProvider';
@@ -8,9 +8,15 @@ import { RestaurantContext } from '../RestaurantProvider';
  */
 const Dish = ({id, picture, title="כותרת מסעדה", discription="תיאור מסעדה", price=0, priceSymbol="₪"}) => {
 
-    const [amount, setAmount] = useState(0);
-
+      
     const {handlePlus, handleMinus, cart} = useContext(RestaurantContext);
+
+    const handleAmount = () => {
+        const dish = cart.find(dish => dish.id === id);
+        if(!dish)
+            return 0;
+        return dish.quantity;
+    }
 
     return (
         <div className={Style.dish} id={id}>
@@ -29,7 +35,7 @@ const Dish = ({id, picture, title="כותרת מסעדה", discription="תיאו
                         <p>{price.toFixed(2)}{priceSymbol}</p>
                     </div>
                     <div className={Style.buttons}>
-                        <Counter onPlus={()=>{handlePlus(id, setAmount)}} onMinus={()=>{handleMinus(id, setAmount)}} amount={amount}/>
+                        <Counter onPlus={()=>{handlePlus(id)}} onMinus={()=>{handleMinus(id)}} amount={handleAmount()} />
                     </div>
                 </div>
             </div>

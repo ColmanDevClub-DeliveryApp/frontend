@@ -3,22 +3,20 @@ import { useParams } from 'react-router-dom'
 import Style from './styles.module.css'
 import RestaurantBanner from "../../components/RestaurantBanner"
 import axios from 'axios'
-import { useState } from 'react';
-import testRest from "../../DB/restaurantDB"
+import { useState, useContext } from 'react';
 import RestaurantInfo from "../../components/RestaurantInfo"
 import List from "../../components/List"
 import RestaurantSidebar from "../../components/RestaurantSidebar"
 import Button from '../../components/Button';
-import { RestaurantProvider } from '../../components/RestaurantProvider'
-
-
+import { RestaurantContext } from '../../components/RestaurantProvider';
 
 function RestaurantPage() {
     const {restaurant_name} = useParams();
     const [restaurant, setRestaurant] = useState({})
     const [pageLoaded, setPageLoaded] = useState(false)
     const [catalogTitles, setCatalogTitles] = useState([])
-    const [cart, setCart] = useState([])
+    const [dishes, setDishes] = useState([])
+    const {cart} = useContext(RestaurantContext)
 
     useEffect(() => {
       axios.get(`http://localhost:8080/restaurants/${restaurant_name.toLowerCase()}`).then((res)=> {
@@ -31,8 +29,10 @@ function RestaurantPage() {
     }, [restaurant_name])
 
     useEffect (()=> {
-      if (pageLoaded)
-        saveCatalogTitles()
+      if (pageLoaded){
+        saveCatalogTitles();
+        saveDishes();
+      }
     }, [pageLoaded])
 
     const saveCatalogTitles = ()=> {
@@ -43,10 +43,21 @@ function RestaurantPage() {
         })
         setCatalogTitles(catTitles)
     }
+
+    const saveDishes = ()=> {
+      const dishes = []
+      restaurant.category.map((element)=> {
+        element.dishes.map((dish)=> {
+          dishes.push(dish)
+        })
+      })
+      setDishes(dishes)
+    }
+
     
 
   return (pageLoaded&& 
-    <RestaurantProvider>
+    <>
         <RestaurantBanner img={restaurant.image} restTitle={restaurant.shownName} subTitle={restaurant.description}/>
         <div className={Style.hero}>
           <input className={Style.search} placeholder='חפש בתפריט'/>
@@ -67,10 +78,10 @@ function RestaurantPage() {
             </nav>
           </div>
           {cart.length > 0 && <div className={Style.end_btn}>
-            <Button text="לסיום הזמנה" size="large"/>
+            <Button text="לסיום הזמנה" size="large" onclick={()=> {console.log(dishes);}}/>
           </div>}
         </div>
-    </RestaurantProvider>
+    </>
   )
 }
 
