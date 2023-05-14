@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Styles from './styles.module.css';
-import Button from '../button'
+import Button from '../Button'
 import '@fortawesome/fontawesome-free/css/all.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins } from '@fortawesome/free-solid-svg-icons';
