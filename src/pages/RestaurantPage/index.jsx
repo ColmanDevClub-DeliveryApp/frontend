@@ -9,6 +9,7 @@ import RestaurantInfo from "../../components/RestaurantInfo"
 import List from "../../components/List"
 import RestaurantSidebar from "../../components/RestaurantSidebar"
 import Button from '../../components/Button';
+import { RestaurantProvider } from '../../components/RestaurantProvider'
 
 
 
@@ -42,16 +43,10 @@ function RestaurantPage() {
         })
         setCatalogTitles(catTitles)
     }
-    const addToCart = ()=> {
-      console.log('add to cart');
-    }
-    const removeFromCart = ()=> {
-      console.log('remove from cart');
-    }
     
 
   return (pageLoaded&& 
-    <>
+    <RestaurantProvider>
         <RestaurantBanner img={restaurant.image} restTitle={restaurant.shownName} subTitle={restaurant.description}/>
         <div className={Style.hero}>
           <input className={Style.search} placeholder='חפש בתפריט'/>
@@ -75,7 +70,7 @@ function RestaurantPage() {
             <Button text="לסיום הזמנה" size="large"/>
           </div>}
         </div>
-    </>
+    </RestaurantProvider>
   )
 }
 

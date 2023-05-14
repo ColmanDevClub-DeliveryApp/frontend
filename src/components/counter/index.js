@@ -9,23 +9,13 @@ import IconButton from "../IconButton";
  * 
  */
 
-const Counter = ({type="contained", size="normal"}) => {
-    const [count, setCount] = useState(0);
-
-    const addOne = ()=> {
-        setCount(count+1);
-    }
-    const decreaseByOne = ()=> {
-        if(count > 0) {
-            setCount(count-1);
-        }
-    }
+const Counter = ({type="contained", size="normal", onPlus, onMinus, amount=0}) => {
     
     return (
         <div className={Style.counter_container}>
-            <IconButton icon={"+"} onclick={addOne} type={type} size={size}/>
-            <span className={`${Style[size]} ${Style.span}`}>{count}</span>
-            <IconButton icon={"-"} onclick={decreaseByOne} type={type} size={size}/>
+            <IconButton icon={"+"} onclick={onPlus} type={type} size={size}/>
+            <span className={`${Style[size]} ${Style.span}`}>{amount}</span>
+            <IconButton icon={"-"} onclick={onMinus} type={type} size={size}/>
         </div>
     )
 }
