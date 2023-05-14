@@ -16,7 +16,7 @@ const RestaurantInfo = ({address="ראשון לציון", phone="123-456-7890", 
         {openingTimes.map(({ day, hours }) => (
           <div className={Style.openingTimes}>
               <p className={Style.hours}>{hours}</p>
-              <p className={Style.day}>:{day}</p>
+              <p className={Style.day}>{day}:</p>
           </div>
           ))}
     </div>
