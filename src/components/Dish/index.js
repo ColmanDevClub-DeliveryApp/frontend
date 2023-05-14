@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from "./styles.module.css"
-import Counter from '../counter'
+import Counter from '../Counter'
 
 /**
  *
