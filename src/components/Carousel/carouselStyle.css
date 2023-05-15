@@ -25,10 +25,8 @@
 
 .alice-carousel__prev-btn-wrapper {
     left: 0.5rem;
-    cursor: pointer;
 }
 
 .alice-carousel__next-btn-wrapper {
     right: 0.5rem;
-    cursor: pointer;
 }

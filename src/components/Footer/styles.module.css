@@ -1,0 +1,17 @@
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+}
+
+.footerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
