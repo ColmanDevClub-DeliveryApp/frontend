@@ -13,11 +13,11 @@ import Loader from "../../components/Loader";
 
 function RestaurantPage() {
   const { restaurant_name } = useParams();
-  const [restaurant, setRestaurant] = useState({});
+  // const [restaurant, setRestaurant] = useState({});
   const [pageLoaded, setPageLoaded] = useState(false);
   const [catalogTitles, setCatalogTitles] = useState([]);
   // const [dishes, setDishes] = useState([]);
-  const { cart, setDishes } = useContext(RestaurantContext);
+  const { cart, setDishes, restaurant, setRestaurant } = useContext(RestaurantContext);
 
   useEffect(() => {
     axios

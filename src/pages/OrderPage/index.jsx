@@ -17,27 +17,9 @@ const OrderPage = () => {
   const [restTitle, setResTitle] = useState("");
   const [img, setImg] = useState("");
 
-  const [restaurant, setRestaurant] = useState({});
-  const [pageLoaded, setPageLoaded] = useState(false);
-
-  const { cart, dishes } = useContext(RestaurantContext);
-
-  const { restaurant_name } = useParams();
+  const { cart, dishes, restaurant} = useContext(RestaurantContext);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/restaurants/${restaurant_name.toLowerCase()}`)
-      .then((res) => {
-        setRestaurant(res.data);
-        setPageLoaded(true);
-      })
-      .catch((e) => {
-        console.log(`ERROR: ${e}`);
-      });
-  }, [restaurant_name]);
-
-  useEffect(() => {
-    if (pageLoaded) {
         setResTitle(restaurant.shownName);
         setImg(restaurant.image);
         setDeliveryPrice(restaurant.deliveryCost);
@@ -48,8 +30,8 @@ const OrderPage = () => {
         });
         setDishesInOrder(dishesInOrder);
       }
-    }
-  }, [pageLoaded]);
+    
+  }, []);
 
   useEffect(() => {
     if (dishesInOrder.length > 0) {
@@ -64,8 +46,7 @@ const OrderPage = () => {
   }, [dishesInOrder]);
 
   return (
-    <Loader isLoading={!pageLoaded}>
-      {pageLoaded && (
+     (
         <div className={Style.container}>
           <RestaurantBanner img={img} restTitle={restTitle} />
           <hr />
@@ -86,8 +67,7 @@ const OrderPage = () => {
             />
           </div>
         </div>
-      )}
-    </Loader>
+      )
   );
 };
 

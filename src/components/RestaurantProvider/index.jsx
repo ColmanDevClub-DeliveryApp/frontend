@@ -8,6 +8,7 @@ const RestaurantProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
     const [dishes, setDishes] = useState([])
+    const [restaurant, setRestaurant] = useState({})
     
     const handlePlus = (dishId) => {
         if(cart.some(dish => dish.id === dishId)){
@@ -33,7 +34,7 @@ const RestaurantProvider = ({ children }) => {
         }
     }
 
-    const value = {handlePlus, handleMinus, cart, dishes, setDishes}
+    const value = {handlePlus, handleMinus, cart, dishes, setDishes, restaurant, setRestaurant}
     return (
     <RestaurantContext.Provider value={value}>{children}</RestaurantContext.Provider>
   );
