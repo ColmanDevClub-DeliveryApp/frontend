@@ -58,7 +58,7 @@ function RestaurantPage() {
       });
     });
     setDishes(dishes);
-    
+
   };
 
   return (
@@ -92,6 +92,7 @@ function RestaurantPage() {
                         items={catalogItem.dishes}
                         listTitle={catalogItem.title}
                         subTitle={catalogItem.subtitle}
+                        withCounter={true}
                       />
                     </div>
                   );

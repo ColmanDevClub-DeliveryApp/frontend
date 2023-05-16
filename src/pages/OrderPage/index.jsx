@@ -74,6 +74,7 @@ const OrderPage = () => {
               items={dishesInOrder}
               listTitle="סיכום הזמנה"
               subTitle="פריטים שנבחרו"
+              withCounter={false}
             />
           </div>
           <div className={Style.payment}>

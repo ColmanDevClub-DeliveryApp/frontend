@@ -8,7 +8,8 @@ import Style from "./styles.module.css";
  * @param {*} listTitle - String
  * @param {*} subTitle - String
  */
-const List = ({ items, listTitle, subTitle }) => {
+const List = ({ items, listTitle, subTitle, withCounter=true }) => {
+  console.log(`FROM LIST: withCoutner: ${withCounter}`);
   return (
     <div className={Style.list}>
       {(listTitle || subTitle) && (
@@ -28,6 +29,7 @@ const List = ({ items, listTitle, subTitle }) => {
                   discription={item.description}
                   picture={item.image}
                   price={item.price}
+                  withCounter={withCounter}
                 />
               </li>
             </>
