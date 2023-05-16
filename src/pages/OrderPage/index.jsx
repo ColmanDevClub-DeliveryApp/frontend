@@ -64,7 +64,7 @@ const OrderPage = () => {
   }, [dishesInOrder]);
 
   return (
-    <Loader pageLoaded={!pageLoaded}>
+    <Loader isLoading={!pageLoaded}>
       {pageLoaded && (
         <div className={Style.container}>
           <RestaurantBanner img={img} restTitle={restTitle} />
