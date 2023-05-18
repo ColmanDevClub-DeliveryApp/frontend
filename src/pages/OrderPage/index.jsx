@@ -3,11 +3,8 @@ import Style from "./styles.module.css";
 import List from "../../components/List";
 import PaymentInfo from "../../components/PaymentInfo";
 import RestaurantBanner from "../../components/RestaurantBanner";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 
 import { RestaurantContext } from "../../components/RestaurantProvider";
-import Loader from "../../components/Loader";
 
 const OrderPage = () => {
   const [dishesInOrder, setDishesInOrder] = useState([]);
@@ -60,9 +57,9 @@ const OrderPage = () => {
           </div>
           <div className={Style.payment}>
             <PaymentInfo
-              orderPrice={orderPrice || "0"}
-              deliveryPrice={deliveryPrice || "0"}
-              totalPrice={totalPrice || "0"}
+              orderPrice={orderPrice || 0}
+              deliveryPrice={deliveryPrice || 0}
+              totalPrice={totalPrice || 0}
               priceSymbol="₪"
             />
           </div>
