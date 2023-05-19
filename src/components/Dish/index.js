@@ -1,12 +1,21 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import Style from "./styles.module.css"
 import Counter from '../Counter'
+import { RestaurantContext } from '../RestaurantProvider';
 
 /**
- *
  * parameters: picture, title, discription, price
  */
-const Dish = ({id, picture, title="כותרת מסעדה", discription="תיאור מסעדה", price=0, priceSymbol="₪"}) => {
+const Dish = ({id, picture, title="כותרת מסעדה", discription="תיאור מסעדה", price=0, priceSymbol="₪", withCounter=true}) => {
+
+      
+    const {handlePlus, handleMinus, cart} = useContext(RestaurantContext);
+    const handleAmount = () => {
+        const dish = cart.find(dish => dish.id === id);
+        if(!dish)
+            return 0;
+        return dish.quantity;
+    }
 
     return (
         <div className={Style.dish} id={id}>
@@ -25,7 +34,8 @@ const Dish = ({id, picture, title="כותרת מסעדה", discription="תיאו
                         <p>{price.toFixed(2)}{priceSymbol}</p>
                     </div>
                     <div className={Style.buttons}>
-                        <Counter />
+                        {withCounter ? <Counter onPlus={()=>{handlePlus(id)}} onMinus={()=>{handleMinus(id)}} amount={handleAmount()} /> : `x ${handleAmount()}`}
+                        
                     </div>
                 </div>
             </div>
