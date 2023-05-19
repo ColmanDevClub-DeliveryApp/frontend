@@ -10,7 +10,6 @@ const Dish = ({id, picture, title="כותרת מסעדה", discription="תיאו
 
       
     const {handlePlus, handleMinus, cart} = useContext(RestaurantContext);
-    console.log(`withCounter: ${withCounter}`);
     const handleAmount = () => {
         const dish = cart.find(dish => dish.id === id);
         if(!dish)

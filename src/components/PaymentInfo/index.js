@@ -16,7 +16,7 @@ const PaymentInfo = ({
   deliveryPrice = 0,
   totalPrice = 0,
   priceSymbol = "₪",
-  userId = "",
+  userId = "646139405be7c30ede9264cb",
 }) => {
   const { cart, restaurant } = useContext(RestaurantContext);
   const order = {
@@ -28,14 +28,15 @@ const PaymentInfo = ({
   const navigate = useNavigate();
 
   const onEndOrder = () => {
-    // axios .post("http://localhost:3001/api/orders", { restaurantId: restaurant._id, userId: userId, order: order })
-    //   .then((res) => {
-    //     navigate("/");
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-    navigate("/");
+    axios
+      .post("http://localhost:8080/order", { order: order })
+      .then((res) => {
+
+      })
+      .catch((err) => {
+
+      });
+      navigate('/');
   };
 
   return (

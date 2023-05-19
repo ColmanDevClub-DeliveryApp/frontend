@@ -27,7 +27,7 @@ function RestaurantPage() {
         setPageLoaded(true);
       })
       .catch((e) => {
-        console.log(`ERROR: ${e}`);
+
       });
   }, [restaurant_name]);
 

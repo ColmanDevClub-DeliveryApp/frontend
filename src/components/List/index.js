@@ -9,7 +9,6 @@ import Style from "./styles.module.css";
  * @param {*} subTitle - String
  */
 const List = ({ items, listTitle, subTitle, withCounter=true }) => {
-  console.log(`FROM LIST: withCoutner: ${withCounter}`);
   return (
     <div className={Style.list}>
       {(listTitle || subTitle) && (
