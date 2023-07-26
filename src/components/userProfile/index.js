@@ -1,22 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import Styles from './styles.module.css';
-import Button from '../Button'
-import '@fortawesome/fontawesome-free/css/all.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoins } from '@fortawesome/free-solid-svg-icons';
-import RestaurantCard from '../RestaurantCard';
+import React, { useState, useEffect } from "react";
+import Styles from "./styles.module.css";
+import Button from "../Button";
+import "@fortawesome/fontawesome-free/css/all.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoins } from "@fortawesome/free-solid-svg-icons";
+import RestaurantCard from "../RestaurantCard";
+import axios from "axios";
 
-const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePicture="", coins=0, cardNumber="1234-1234-1234-1234"}) => {
-    const [email, setEmail] = useState(emailAddress);
-    const [phoneNum, setPhoneNum] = useState(phoneNumber);
-    const [profilePic, setProfilePic] = useState(profilePicture);
-    const [specialCoins, setSpecialCoins] = useState(coins);
-    const [paymentDetails, setPaymentDetails] = useState(cardNumber)
+const UserProfile = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user);
+  const [myUser, setMyUser] = useState({});
+  const fetchUser = () => {
+    axios
+      .get(`http://localhost:8080/auth/user/${user}`)
+      .then((res) => {
+        console.log(res.data);
+        setMyUser(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
 
-  const [originalEmail, setOriginalEmail] = useState('');
-  const [originalPhoneNumber, setOriginalPhoneNumber] = useState('');
-  const [originalProfilePicture, setOriginalProfilePicture] = useState('');
-  const [originalPaymentDetails, setOriginalPaymentDetails] = useState('');
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
+  const [email, setEmail] = useState(myUser.email);
+  const [phoneNum, setPhoneNum] = useState(myUser.phoneNumber);
+  const [profilePic, setProfilePic] = useState(myUser.profilePicture);
+  const [specialCoins, setSpecialCoins] = useState(12);
+  const [paymentDetails, setPaymentDetails] = useState(1234567891234567);
+
+  const [originalEmail, setOriginalEmail] = useState("");
+  const [originalPhoneNumber, setOriginalPhoneNumber] = useState("");
+  const [originalProfilePicture, setOriginalProfilePicture] = useState("");
+  const [originalPaymentDetails, setOriginalPaymentDetails] = useState("");
 
   const [editing, setEditing] = useState(false);
 
@@ -28,7 +46,6 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
     setEditing(false);
   }, []);
 
-
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -37,13 +54,13 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
     setPhoneNum(event.target.value);
   };
 
-  const handleProfilePictureChange = (event) =>{
-    setProfilePic(event.target.value)
-  }
+  const handleProfilePictureChange = (event) => {
+    setProfilePic(event.target.value);
+  };
 
-  const handlePaymentDetailsChange = (event) =>{
-    setPaymentDetails(event.target.value)
-  }
+  const handlePaymentDetailsChange = (event) => {
+    setPaymentDetails(event.target.value);
+  };
 
   const handleEditClick = () => {
     setOriginalEmail(email);
@@ -72,91 +89,101 @@ const UserProfile = ({fullName="", emailAddress="", phoneNumber="", profilePictu
   return (
     <div className={Styles.user_profile}>
       <div className={Styles.topBar}>
-        <Button text="מחיקת משתמש" overrides={{"background-color":"red"}} size="small" />
+        <Button
+          text="מחיקת משתמש"
+          overrides={{ "background-color": "red" }}
+          size="small"
+        />
         <h1>פרופיל</h1>
       </div>
 
-        <div className={Styles.profile_info_item}>
-            <div className={Styles.name}><h2>{fullName}</h2></div>
+      <div className={Styles.profile_info_item}>
+        <div className={Styles.name}>
+          <h2>{myUser.firstName}</h2>
         </div>
+      </div>
 
-        <div className={Styles.profile_info_container}>
+      <div className={Styles.profile_info_container}>
         <div className={Styles.profile_info_item}>
-                <div className={Styles.profile_info_label}>פרטי אשראי</div>
-                {editing ? (
-                    <input
-                        className={Styles.edit_profile_input}
-                        type="text"
-                        value={paymentDetails}
-                        onChange={handlePaymentDetailsChange}
-                    />
-                ) : (
-                <div>{paymentDetails}</div>
-                )}
-            </div>
-            <div className={Styles.profile_info_item}>
-                <div className={Styles.profile_info_label}>אימייל</div>
-            {editing ? (
-                <input
-                    className={Styles.edit_profile_input}
-                    type="text"
-                    value={email}
-                    onChange={handleEmailChange}
-                />
-            ) : (
-                <div>{email}</div>
-                )}
-            </div>
-            <div className={Styles.profile_info_item}>
-                <div className={Styles.profile_info_label}>מספר טלפון</div>
-                {editing ? (
-                    <input
-                        className={Styles.edit_profile_input}
-                        type="text"
-                        value={phoneNum}
-                        onChange={handlePhoneNumberChange}
-                    />
-                ) : (
-                <div>{phoneNum}</div>
-                )}
-            </div>
-            <div className={Styles.profile_info_item}>
-                <div className={`${Styles.profile_info_label} ${Styles.profileDiv}`}><img className={Styles.profilePic} src={profilePic} alt='profilePic'/></div>
-                {editing ? (
-                    <input
-                        className={`${Styles.edit_profile_input} ${Styles.profilePicInput}`}
-                        type="text"
-                        value={profilePic}
-                        onChange={handleProfilePictureChange}
-                    />
-                ) : (
-                <div></div>
-                )}
-            </div>
+          <div className={Styles.profile_info_label}>פרטי אשראי</div>
+          {editing ? (
+            <input
+              className={Styles.edit_profile_input}
+              type="text"
+              value={paymentDetails}
+              onChange={handlePaymentDetailsChange}
+            />
+          ) : (
+            <div>{paymentDetails}</div>
+          )}
         </div>
+        <div className={Styles.profile_info_item}>
+          <div className={Styles.profile_info_label}>אימייל</div>
+          {editing ? (
+            <input
+              className={Styles.edit_profile_input}
+              type="text"
+              value={myUser.email}
+              onChange={handleEmailChange}
+            />
+          ) : (
+            <div>{myUser.email}</div>
+          )}
+        </div>
+        <div className={Styles.profile_info_item}>
+          <div className={Styles.profile_info_label}>מספר טלפון</div>
+          {editing ? (
+            <input
+              className={Styles.edit_profile_input}
+              type="text"
+              value={myUser.phoneNumber}
+              onChange={handlePhoneNumberChange}
+            />
+          ) : (
+            <div>{myUser.phoneNumber}</div>
+          )}
+        </div>
+        <div className={Styles.profile_info_item}>
+          <div className={`${Styles.profile_info_label} ${Styles.profileDiv}`}>
+            <img
+              className={Styles.profilePic}
+              src={myUser.profilePicture}
+              alt="profilePic"
+            />
+          </div>
+          {editing ? (
+            <input
+              className={`${Styles.edit_profile_input} ${Styles.profilePicInput}`}
+              type="text"
+              value={myUser.profilePicture}
+              onChange={handleProfilePictureChange}
+            />
+          ) : (
+            <div></div>
+          )}
+        </div>
+      </div>
       {editing ? (
         <div className={Styles.saveCancelButtons}>
-          <Button text="שמירה" onclick={handleSaveClick}/>
-          <Button text="ביטול" onclick ={handleCancelClick}/>
+          <Button text="שמירה" onclick={handleSaveClick} />
+          <Button text="ביטול" onclick={handleCancelClick} />
         </div>
       ) : (
-        <Button text="עריכה" onclick={handleEditClick} fullWidth/>
+        <Button text="עריכה" onclick={handleEditClick} fullWidth />
       )}
 
-        <div className={Styles.specialCoins}>
-            <FontAwesomeIcon icon={faCoins} />
-            <span className={Styles.coinsIcon}>Special Coins: {specialCoins}</span>
-        </div>
+      <div className={Styles.specialCoins}>
+        <FontAwesomeIcon icon={faCoins} />
+        <span className={Styles.coinsIcon}>Special Coins: {specialCoins}</span>
+      </div>
 
-        <h1>הזמנות אחרונות</h1>
-        <div className={Styles.restaurants}>
-            <RestaurantCard/>
-            <RestaurantCard/>
-            <RestaurantCard/>
-        </div>
-        
+      <h1>הזמנות אחרונות</h1>
+      <div className={Styles.restaurants}>
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+      </div>
     </div>
   );
 };
 export default UserProfile;
-

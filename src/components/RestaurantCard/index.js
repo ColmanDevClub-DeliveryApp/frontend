@@ -31,7 +31,7 @@ const RestaurantCard = ({
         <p className={Style.deliveryDetails__left}>
           <FiPackage />
           <span className={Style.price}>
-            {restaurantItem.deliveryCost.toFixed(2)}₪
+            {/* {restaurantItem.deliveryCost.toFixed(2)}₪ */}
           </span>
         </p>
         <p className={Style.deliveryDetails__right}>

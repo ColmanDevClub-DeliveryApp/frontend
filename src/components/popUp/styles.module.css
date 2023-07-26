@@ -1,38 +1,41 @@
-.modal, .overLay{
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;;
+.modal,
+.overLay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
 }
-.overLay{
-    background: rgba(49,49,49,0.8);
+.modal {
+  z-index: 99999;
 }
-
-.modalContent{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    line-height: 1.4;
-    padding: 3rem;
-    border-radius: 0.5rem;
+.overLay {
+  background: rgba(49, 49, 49, 0.8);
 }
 
-.title{
-    width: 50%;
-    justify-content: space-between;
-    display: flex;
-    margin: auto;
-    margin-top: 2rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
-
+.modalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  line-height: 1.4;
+  padding: 3rem;
+  border-radius: 0.5rem;
 }
 
-.bold{
-    font-weight: 700;
+.title {
+  width: 50%;
+  justify-content: space-between;
+  display: flex;
+  margin: auto;
+  margin-top: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.bold {
+  font-weight: 700;
 }

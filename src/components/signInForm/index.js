@@ -1,30 +1,61 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Button from "../Button";
-import Styles from './styles.module.css'
-import {FaGoogle} from 'react-icons/fa'
+import Styles from "./styles.module.css";
+import { FaGoogle } from "react-icons/fa";
+import axios from "axios";
 
-const SignInForm = () =>{
+const SignInForm = () => {
+  const initialize = {
+    email: "",
+    password: "",
+  };
+  const [data, setData] = useState(initialize);
 
-    return(
-        <div className={Styles.signIn}>
-        <form className={Styles.form}>
-            <div className={Styles.inputsContainer}>
-                <input className={Styles.input} type="email" placeholder="אימייל"></input>
-                <input className={`${Styles.input} ${Styles.lastInput}`} type="password" placeholder="סיסמא"></input>
-                <div className={Styles.forgotPassword}>
-                    <Button text="שכחתי את הסיסמא" size="small" type="none" fullWidth overrides={{"padding":"0"}}/>
-                </div>
-            </div>
-            <Button text="התחבר" fullWidth/>
-        </form>
-        <Button text="Continue with Google" fullWidth type="outlined">
-        <FaGoogle className={Styles.google_icon}/>
-        </Button>
+  const handleChange = (key, value) => {
+    setData({ ...data, [key]: value });
+  };
 
-        
+  const handleSignIn = async (e) => {
+    // post request with body
+    const response = await axios.post("http://localhost:8080/auth/login", data);
+    if (response.status === 200) {
+      localStorage.setItem("user", JSON.stringify(data.email));
+    }
+  };
 
+  return (
+    <div className={Styles.signIn}>
+      <form className={Styles.form}>
+        <div className={Styles.inputsContainer}>
+          <input
+            onChange={(e) => handleChange("email", e.target.value)}
+            className={Styles.input}
+            type="email"
+            placeholder="אימייל"
+          ></input>
+          <input
+            onChange={(e) => handleChange("password", e.target.value)}
+            className={`${Styles.input} ${Styles.lastInput}`}
+            type="password"
+            placeholder="סיסמא"
+          ></input>
+          <div className={Styles.forgotPassword}>
+            <Button
+              text="שכחתי את הסיסמא"
+              size="small"
+              type="none"
+              fullWidth
+              overrides={{ padding: "0" }}
+            />
+          </div>
         </div>
-    );
-}
+        <Button text="התחבר" fullWidth onclick={handleSignIn} />
+      </form>
+      <Button text="Continue with Google" fullWidth type="outlined">
+        <FaGoogle className={Styles.google_icon} />
+      </Button>
+    </div>
+  );
+};
 
 export default SignInForm;

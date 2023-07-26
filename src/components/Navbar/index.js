@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Style from "./styles.module.css";
 import { MdLocationOn } from "react-icons/md";
 import Button from "../Button";
 import { Link } from "react-router-dom";
+import Popup from "../popUp/index";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ user }) => {
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [newUser, setNewUser] = useState(false);
+  const isLoggedIn = localStorage.getItem("user");
+  const navigate = useNavigate();
+
+  const togglePopup = () => {
+    setPopupVisible((prev) => !prev);
+  };
+
+  const handleLogOut = async () => {
+    localStorage.removeItem("user");
+    navigate("/");
+  };
+
+  const handleProfile = () => {
+    navigate("/profile");
+  };
 
   return (
     <div className={Style.navbar_container}>
@@ -58,12 +78,33 @@ const Navbar = ({ user }) => {
           ></input>
         </li>
         <li className={`${Style.li} ${Style.li_btns}`}>
-          {user ? (
-            <Button text="התנתק" type="none" />
+          {isLoggedIn ? (
+            <>
+              <Button text="התנתק" type="none" onclick={handleLogOut} />
+              <Button text="פרופיל" type="none" onclick={handleProfile} />
+            </>
           ) : (
             <>
-              <Button text="התחבר" />
-              <Button text="הירשם" />
+              <Popup
+                isOpen={popupVisible}
+                onClose={togglePopup}
+                isNewUser={newUser}
+                setNewUser={setNewUser}
+              />
+              <Button
+                text="התחבר"
+                onclick={() => {
+                  setNewUser(false);
+                  togglePopup();
+                }}
+              />
+              <Button
+                text="הירשם"
+                onclick={() => {
+                  setNewUser(true);
+                  togglePopup();
+                }}
+              />
             </>
           )}
         </li>
