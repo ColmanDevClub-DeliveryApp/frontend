@@ -19,6 +19,7 @@ const Navbar = ({ user }) => {
 
   const handleLogOut = async () => {
     localStorage.removeItem("user");
+    setPopupVisible(false);
     navigate("/");
   };
 
